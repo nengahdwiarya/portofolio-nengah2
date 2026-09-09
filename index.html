@@ -26,25 +26,39 @@
             <h1>Halo, Saya <span class="highlight">Nengah Dwi Arya</span></h1>
             <p class="subtitle">Spesialis Pengembangan Web Modern, Responsif & Antarmuka Interaktif</p>
             
-            <!-- Tombol Sosial Media 3D -->
+            <!-- Tombol Sosial Media 3D (Link Anchor) -->
             <div class="social-links">
-                <button class="social-btn instagram" onclick="showInfo('instagram')">
+                <a href="#info-instagram" class="social-btn instagram">
                     <i class="fab fa-instagram"></i> Instagram
-                </button>
-                <button class="social-btn tiktok" onclick="showInfo('tiktok')">
+                </a>
+                <a href="#info-tiktok" class="social-btn tiktok">
                     <i class="fab fa-tiktok"></i> TikTok
-                </button>
+                </a>
             </div>
 
-            <!-- Kotak Penjelasan Informasi Sosial Media (Muncul saat dipencet) -->
-            <div id="social-info" class="social-info-box hidden"></div>
+            <!-- Penjelasan Informasi Sosial Media (Murni CSS :target) -->
+            <div class="social-info-wrapper">
+                <div id="info-instagram" class="social-info-box">
+                    <h4><i class="fab fa-instagram"></i> Instagram: @aryanengahdwi</h4>
+                    <p>Di Instagram, saya membagikan aktivitas harian, dokumentasi proyek web design, serta konten seputar teknologi.</p>
+                    <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="info-link">Kunjungi Profil Instagram &rarr;</a>
+                    <a href="#" class="close-btn">&times; Tutup</a>
+                </div>
+
+                <div id="info-tiktok" class="social-info-box">
+                    <h4><i class="fab fa-tiktok"></i> TikTok: @nengahnengah5</h4>
+                    <p>Di TikTok, saya sering mengunggah video pendek seputar tips coding, kreativitas digital, dan tren terkini.</p>
+                    <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="info-link">Kunjungi Profil TikTok &rarr;</a>
+                    <a href="#" class="close-btn">&times; Tutup</a>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Konten Utama -->
     <main class="container">
         
-        <!-- Section Tentang Saya (Informasi Diperbanyak) -->
+        <!-- Section Tentang Saya -->
         <section id="about" class="card-section">
             <div class="section-header">
                 <div class="icon-box"><i class="fas fa-user-astronaut"></i></div>
@@ -53,7 +67,6 @@
             <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, efisien, dan responsif. Berlandaskan semangat inovasi anak bangsa, saya berdedikasi untuk menciptakan solusi digital berkualitas tinggi yang memberikan dampak positif.</p>
             <p style="margin-top: 10px;">Selain fokus pada penulisan kode yang bersih (clean code), saya juga tertarik pada desain antarmuka pengguna (UI/UX) serta optimasi performa website agar nyaman digunakan di berbagai perangkat.</p>
             
-            <!-- Skill Tags Tambahan -->
             <div class="skills-wrapper">
                 <span class="skill-badge">HTML5 & CSS3</span>
                 <span class="skill-badge">JavaScript</span>
@@ -71,14 +84,12 @@
             </div>
             
             <div class="project-grid">
-                <!-- Card Proyek 1 -->
                 <div class="project-card">
                     <div class="project-tag">Aplikasi Web</div>
                     <h3>Sistem Presensi</h3>
                     <p>Aplikasi pencatatan kehadiran pegawai berbasis digital secara real-time dan terintegrasi untuk efisiensi manajemen kerja.</p>
                 </div>
 
-                <!-- Card Proyek 2 -->
                 <div class="project-card">
                     <div class="project-tag">Portofolio</div>
                     <h3>Website Portofolio</h3>
@@ -97,7 +108,5 @@
         </div>
     </footer>
 
-    <!-- Script JavaScript -->
-    <script src="script.js"></script>
 </body>
 </html>
