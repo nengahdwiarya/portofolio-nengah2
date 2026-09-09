@@ -29,7 +29,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header / Hero Simpel */
+/* Header / Hero */
 .hero {
     position: relative;
     background: var(--card-bg);
@@ -40,7 +40,6 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-/* Foto Profil */
 .profile-avatar {
     margin: 0 auto 20px auto;
     width: 120px;
@@ -49,11 +48,6 @@ body {
     overflow: hidden;
     border: 3px solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-}
-
-.profile-avatar:hover {
-    transform: scale(1.05);
 }
 
 .profile-avatar img {
@@ -91,7 +85,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* Social Buttons - Simpel dengan Efek 3D */
+/* Social Buttons - Simpel 3D */
 .social-links {
     display: flex;
     justify-content: center;
@@ -114,13 +108,11 @@ body {
     top: 0;
 }
 
-/* Tombol Instagram Minimalis */
 .social-btn.instagram {
     background: #1e293b;
     box-shadow: 0 5px 0px #0f172a, 0 8px 15px rgba(15, 23, 42, 0.15);
 }
 
-/* Tombol TikTok Minimalis */
 .social-btn.tiktok {
     background: #2563eb;
     box-shadow: 0 5px 0px #1d4ed8, 0 8px 15px rgba(37, 99, 235, 0.2);
@@ -130,10 +122,86 @@ body {
     top: -2px;
 }
 
-/* Active State - Efek Tekan 3D saat klik */
 .social-btn:active {
     top: 5px;
     box-shadow: 0 0px 0px transparent !important;
+}
+
+/* Penjelasan Informasi Sosial Media (CSS :target Magic) */
+.social-info-wrapper {
+    margin-top: 20px;
+}
+
+.social-info-box {
+    display: none; /* Sembunyi secara default */
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 15px auto 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    position: relative;
+}
+
+/* Muncul hanya saat ID-nya di-klik (:target) */
+.social-info-box:target {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.social-info-box h4 {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-info-box p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.info-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.close-btn:hover {
+    color: var(--text-main);
+}
+
+/* Skills Badges */
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.skill-badge {
+    background: var(--accent-light);
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #dbeafe;
 }
 
 /* Card Section */
@@ -219,7 +287,17 @@ footer {
     color: var(--accent-blue);
 }
 
-/* Responsif HP */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 2rem;
