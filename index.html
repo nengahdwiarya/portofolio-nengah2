@@ -12,9 +12,8 @@
 </head>
 <body>
 
-    <!-- Hero / Header Section -->
+    <!-- Header / Hero Section -->
     <header class="hero">
-        <div class="hero-overlay"></div>
         <div class="container hero-content">
             <!-- Foto Profil -->
             <div class="profile-avatar">
@@ -22,36 +21,49 @@
             </div>
 
             <div class="badge-indo">
-                <span class="flag">🇮🇩</span> Bangga Berkarya untuk Indonesia
+                <span class="flag">🇮🇩</span> Web Developer & Designer Indonesia
             </div>
             <h1>Halo, Saya <span class="highlight">Nengah Dwi Arya</span></h1>
-            <p class="subtitle">Web Developer & Designer</p>
+            <p class="subtitle">Spesialis Pengembangan Web Modern, Responsif & Antarmuka Interaktif</p>
             
-            <!-- Sosial Media Links -->
+            <!-- Tombol Sosial Media 3D -->
             <div class="social-links">
-                <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="social-btn instagram">
+                <button class="social-btn instagram" onclick="showInfo('instagram')">
                     <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="social-btn tiktok">
+                </button>
+                <button class="social-btn tiktok" onclick="showInfo('tiktok')">
                     <i class="fab fa-tiktok"></i> TikTok
-                </a>
+                </button>
             </div>
+
+            <!-- Kotak Penjelasan Informasi Sosial Media (Muncul saat dipencet) -->
+            <div id="social-info" class="social-info-box hidden"></div>
         </div>
     </header>
 
     <!-- Konten Utama -->
     <main class="container">
         
-        <!-- Section Tentang Saya -->
+        <!-- Section Tentang Saya (Informasi Diperbanyak) -->
         <section id="about" class="card-section">
             <div class="section-header">
                 <div class="icon-box"><i class="fas fa-user-astronaut"></i></div>
                 <h2>Tentang Saya</h2>
             </div>
             <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, efisien, dan responsif. Berlandaskan semangat inovasi anak bangsa, saya berdedikasi untuk menciptakan solusi digital berkualitas tinggi yang memberikan dampak positif.</p>
+            <p style="margin-top: 10px;">Selain fokus pada penulisan kode yang bersih (clean code), saya juga tertarik pada desain antarmuka pengguna (UI/UX) serta optimasi performa website agar nyaman digunakan di berbagai perangkat.</p>
+            
+            <!-- Skill Tags Tambahan -->
+            <div class="skills-wrapper">
+                <span class="skill-badge">HTML5 & CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Responsive Design</span>
+                <span class="skill-badge">UI/UX Layout</span>
+                <span class="skill-badge">Git & GitHub</span>
+            </div>
         </section>
 
-        <!-- Section Proyek Saya -->
+        <!-- Section Proyek Unggulan -->
         <section id="projects" class="card-section">
             <div class="section-header">
                 <div class="icon-box"><i class="fas fa-cubes"></i></div>
@@ -63,14 +75,14 @@
                 <div class="project-card">
                     <div class="project-tag">Aplikasi Web</div>
                     <h3>Sistem Presensi</h3>
-                    <p>Aplikasi pencatatan kehadiran pegawai berbasis digital secara real-time dan terintegrasi.</p>
+                    <p>Aplikasi pencatatan kehadiran pegawai berbasis digital secara real-time dan terintegrasi untuk efisiensi manajemen kerja.</p>
                 </div>
 
                 <!-- Card Proyek 2 -->
                 <div class="project-card">
                     <div class="project-tag">Portofolio</div>
                     <h3>Website Portofolio</h3>
-                    <p>Landing page pribadi modern bertema Nusantara yang di-host menggunakan GitHub Pages.</p>
+                    <p>Landing page pribadi modern bertema Nusantara yang interaktif dan di-host menggunakan GitHub Pages.</p>
                 </div>
             </div>
         </section>
@@ -85,5 +97,7 @@
         </div>
     </footer>
 
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
