@@ -1,30 +1,40 @@
-/* Import Font Google (Poppins) */
+/* Import Google Fonts (Poppins) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Reset & Gaya Dasar */
+/* --- Reset & Variabel Warna --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-color: #38bdf8;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     line-height: 1.7;
-    color: #2d3748;
-    background-color: #f7fafc;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Header */
+/* --- Header / Hero --- */
 header {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    color: #ffffff;
-    padding: 4rem 1.5rem;
+    background: var(--primary-gradient);
+    color: white;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 4rem 1.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
 }
 
 header h1 {
@@ -32,109 +42,112 @@ header h1 {
     font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 header p {
-    font-size: 1.15rem;
-    color: #cbd5e0;
+    font-size: 1.2rem;
     font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 1px;
 }
 
-/* Kontainer Utama (Main Content) */
+/* --- Section Global --- */
 section {
     max-width: 800px;
     width: 90%;
     margin: 2rem auto;
-    padding: 2.5rem;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.15);
 }
 
-/* Judul Bagian (h2) */
+/* Judul H2 (Tentang Saya & Proyek Saya) */
 h2 {
     font-size: 1.5rem;
-    color: #1a202c;
-    margin-bottom: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
     position: relative;
     display: inline-block;
 }
 
-/* Garis bawah di bawah Judul */
 h2::after {
     content: '';
     position: absolute;
-    left: 0;
     bottom: -6px;
-    width: 40px;
-    height: 4px;
-    background: #3182ce;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--accent-color);
     border-radius: 2px;
 }
 
-/* Paragraf di Section */
 section p {
-    color: #4a5568;
+    color: var(--text-muted);
     font-size: 1rem;
 }
 
-/* Daftar Proyek (Dibuat seperti Card) */
+/* --- Tampilan List Proyek (Metode Card Modern) --- */
 section ul {
     list-style: none;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1rem;
 }
 
 section li {
-    background: #edf2f7;
-    padding: 1.2rem;
-    border-radius: 8px;
-    border-left: 4px solid #3182ce;
-    color: #4a5568;
-    transition: background-color 0.2s ease;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    color: var(--text-muted);
+    transition: all 0.3s ease;
 }
 
 section li:hover {
-    background: #e2e8f0;
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(6px);
 }
 
 section li strong {
-    color: #2b6cb0;
-    font-size: 1.05rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
     display: block;
     margin-bottom: 0.2rem;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     margin-top: auto;
     text-align: center;
-    padding: 1.5rem;
-    background: #1a202c;
-    color: #a0aec0;
+    padding: 2rem 1rem;
+    background: #020617;
+    color: var(--text-muted);
     font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsif untuk Layar HP */
+/* --- Responsif HP --- */
 @media (max-width: 600px) {
+    header {
+        padding: 3rem 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
     header h1 {
         font-size: 1.8rem;
-    }
-    
-    header p {
-        font-size: 1rem;
     }
 
     section {
         padding: 1.5rem;
-        margin: 1.5rem auto;
     }
 }
