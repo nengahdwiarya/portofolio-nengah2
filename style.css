@@ -1,4 +1,3 @@
-/* --- RESET & FONT BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +7,25 @@
 }
 
 :root {
-    --bg-color: #0f172a;       /* Dark slate background */
-    --card-bg: #1e293b;        /* Lighter card background */
-    --accent-color: #38bdf8;   /* Bright cyan accent */
-    --text-primary: #f8fafc;   /* Almost white text */
-    --text-secondary: #94a3b8; /* Muted gray text */
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --warna-aksi: #38bdf8;
+    --teks-utama: #f8fafc;
+    --teks-sub: #94a3b8;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
+    background-color: var(--bg-main);
+    color: var(--teks-utama);
     line-height: 1.6;
 }
 
-/* --- HEADER & NAVIGASI --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
@@ -38,7 +36,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--accent-color);
+    color: var(--warna-aksi);
 }
 
 nav ul {
@@ -48,17 +46,16 @@ nav ul {
 }
 
 nav a {
-    color: var(--text-secondary);
+    color: var(--teks-sub);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: var(--accent-color);
+    color: var(--warna-aksi);
 }
 
-/* --- HERO SECTION --- */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -74,7 +71,7 @@ nav a:hover {
 
 .tag {
     background: rgba(56, 189, 248, 0.1);
-    color: var(--accent-color);
+    color: var(--warna-aksi);
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -88,11 +85,11 @@ nav a:hover {
 }
 
 .highlight {
-    color: var(--accent-color);
+    color: var(--warna-aksi);
 }
 
 .hero p {
-    color: var(--text-secondary);
+    color: var(--teks-sub);
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
@@ -100,12 +97,14 @@ nav a:hover {
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    background-color: var(--accent-color);
+    background-color: var(--warna-aksi);
     color: #0f172a;
     text-decoration: none;
     font-weight: 600;
     border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
 }
 
 .btn:hover {
@@ -113,7 +112,6 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
 }
 
-/* --- PROYEK SECTION --- */
 .projects-section {
     padding: 80px 8%;
 }
@@ -129,7 +127,7 @@ nav a:hover {
 }
 
 .section-title p {
-    color: var(--text-secondary);
+    color: var(--teks-sub);
 }
 
 .projects-grid {
@@ -138,22 +136,20 @@ nav a:hover {
     gap: 30px;
 }
 
-/* Card Proyek yang Bisa Dipencet */
 .project-card {
-    background-color: var(--card-bg);
+    background-color: var(--bg-card);
     border-radius: 12px;
     overflow: hidden;
-    text-decoration: none;
-    color: inherit;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    border-color: var(--accent-color);
+    border-color: var(--warna-aksi);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -173,7 +169,7 @@ nav a:hover {
 
 .category {
     font-size: 0.8rem;
-    color: var(--accent-color);
+    color: var(--warna-aksi);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
@@ -186,7 +182,7 @@ nav a:hover {
 }
 
 .card-info p {
-    color: var(--text-secondary);
+    color: var(--teks-sub);
     font-size: 0.95rem;
     margin-bottom: 20px;
     flex-grow: 1;
@@ -194,11 +190,92 @@ nav a:hover {
 
 .link-text {
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--warna-aksi);
     font-size: 0.9rem;
 }
 
-/* --- FOOTER --- */
+/* --- LOGIKA POP-UP MURNI CSS (TANPA JS) --- */
+.saklar-modal {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Saat Saklar Diaktifkan (Checked) */
+#pop1:checked ~ .modal-1,
+#pop2:checked ~ .modal-2 {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    max-width: 650px;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: var(--teks-sub);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--warna-aksi);
+}
+
+.modal-description {
+    color: var(--teks-sub);
+    margin: 15px 0 20px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.tech-stack span {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--teks-utama);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 footer {
     text-align: center;
     padding: 80px 8% 40px;
@@ -212,15 +289,15 @@ footer h2 {
 }
 
 footer p {
-    color: var(--text-secondary);
+    color: var(--teks-sub);
     margin-bottom: 25px;
 }
 
 .btn-outline {
     display: inline-block;
     padding: 10px 24px;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--warna-aksi);
+    color: var(--warna-aksi);
     text-decoration: none;
     font-weight: 600;
     border-radius: 8px;
@@ -228,22 +305,17 @@ footer p {
 }
 
 .btn-outline:hover {
-    background-color: var(--accent-color);
+    background-color: var(--warna-aksi);
     color: #0f172a;
 }
 
 .copyright {
     margin-top: 50px;
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--teks-sub);
 }
 
-/* Responsive Desain untuk HP */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    nav ul {
-        gap: 10px;
-    }
+    .hero h1 { font-size: 2.2rem; }
+    nav ul { gap: 10px; }
 }
