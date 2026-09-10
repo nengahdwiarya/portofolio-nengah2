@@ -1,3 +1,4 @@
+/* --- RESET & VARIABLE WARNA --- */
 * {
     margin: 0;
     padding: 0;
@@ -7,19 +8,20 @@
 }
 
 :root {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --warna-aksi: #38bdf8;
-    --teks-utama: #f8fafc;
-    --teks-sub: #94a3b8;
+    --bg-main: #0f172a;       /* Dark slate */
+    --bg-card: #1e293b;       /* Lighter slate card */
+    --accent-color: #38bdf8;  /* Cyan neon */
+    --text-primary: #f8fafc;  /* White/Light text */
+    --text-secondary: #94a3b8;/* Muted gray text */
 }
 
 body {
     background-color: var(--bg-main);
-    color: var(--teks-utama);
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
+/* --- HEADER & NAVIGASI --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -36,7 +38,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--warna-aksi);
+    color: var(--accent-color);
 }
 
 nav ul {
@@ -46,16 +48,17 @@ nav ul {
 }
 
 nav a {
-    color: var(--teks-sub);
+    color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: var(--warna-aksi);
+    color: var(--accent-color);
 }
 
+/* --- HERO SECTION --- */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -71,7 +74,7 @@ nav a:hover {
 
 .tag {
     background: rgba(56, 189, 248, 0.1);
-    color: var(--warna-aksi);
+    color: var(--accent-color);
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -85,11 +88,11 @@ nav a:hover {
 }
 
 .highlight {
-    color: var(--warna-aksi);
+    color: var(--accent-color);
 }
 
 .hero p {
-    color: var(--teks-sub);
+    color: var(--text-secondary);
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
@@ -97,7 +100,7 @@ nav a:hover {
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    background-color: var(--warna-aksi);
+    background-color: var(--accent-color);
     color: #0f172a;
     text-decoration: none;
     font-weight: 600;
@@ -112,6 +115,7 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
 }
 
+/* --- SECTION PROYEK UNGGULAN --- */
 .projects-section {
     padding: 80px 8%;
 }
@@ -127,7 +131,7 @@ nav a:hover {
 }
 
 .section-title p {
-    color: var(--teks-sub);
+    color: var(--text-secondary);
 }
 
 .projects-grid {
@@ -144,12 +148,12 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    border-color: var(--warna-aksi);
+    border-color: var(--accent-color);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -169,7 +173,7 @@ nav a:hover {
 
 .category {
     font-size: 0.8rem;
-    color: var(--warna-aksi);
+    color: var(--accent-color);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
@@ -182,7 +186,7 @@ nav a:hover {
 }
 
 .card-info p {
-    color: var(--teks-sub);
+    color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 20px;
     flex-grow: 1;
@@ -190,7 +194,7 @@ nav a:hover {
 
 .link-text {
     font-weight: 600;
-    color: var(--warna-aksi);
+    color: var(--accent-color);
     font-size: 0.9rem;
 }
 
@@ -214,7 +218,7 @@ nav a:hover {
     padding: 20px;
 }
 
-/* Saat Saklar Diaktifkan (Checked) */
+/* Membuka modal ketika checkbox dicentang */
 #pop1:checked ~ .modal-1,
 #pop2:checked ~ .modal-2 {
     display: flex;
@@ -246,17 +250,17 @@ nav a:hover {
     top: 15px;
     right: 20px;
     font-size: 28px;
-    color: var(--teks-sub);
+    color: var(--text-secondary);
     cursor: pointer;
     transition: color 0.2s;
 }
 
 .close-btn:hover {
-    color: var(--warna-aksi);
+    color: var(--accent-color);
 }
 
 .modal-description {
-    color: var(--teks-sub);
+    color: var(--text-secondary);
     margin: 15px 0 20px;
 }
 
@@ -269,13 +273,14 @@ nav a:hover {
 
 .tech-stack span {
     background: rgba(255, 255, 255, 0.05);
-    color: var(--teks-utama);
+    color: var(--text-primary);
     padding: 4px 12px;
     border-radius: 6px;
     font-size: 0.85rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 80px 8% 40px;
@@ -289,15 +294,15 @@ footer h2 {
 }
 
 footer p {
-    color: var(--teks-sub);
+    color: var(--text-secondary);
     margin-bottom: 25px;
 }
 
 .btn-outline {
     display: inline-block;
     padding: 10px 24px;
-    border: 2px solid var(--warna-aksi);
-    color: var(--warna-aksi);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
     border-radius: 8px;
@@ -305,16 +310,17 @@ footer p {
 }
 
 .btn-outline:hover {
-    background-color: var(--warna-aksi);
+    background-color: var(--accent-color);
     color: #0f172a;
 }
 
 .copyright {
     margin-top: 50px;
     font-size: 0.85rem;
-    color: var(--teks-sub);
+    color: var(--text-secondary);
 }
 
+/* Responsif Layar HP */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.2rem; }
     nav ul { gap: 10px; }
