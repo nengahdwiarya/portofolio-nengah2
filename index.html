@@ -9,17 +9,56 @@
 </head>
 <body>
 
+    <!-- Saklar Checkbox Pop-up "Tentang" (Trik CSS) -->
+    <input type="checkbox" id="pop-about" class="saklar-modal">
+
     <!-- Navigasi Utama -->
     <header>
         <div class="logo">Portofolio.</div>
         <nav>
             <ul>
-                <li><a href="#about">Tentang</a></li>
+                <!-- Klik 'Tentang' akan membuka Pop-up Profil -->
+                <li><label for="pop-about" class="nav-link">Tentang</label></li>
                 <li><a href="#projects">Proyek</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Modal Pop-up Profil "Tentang" -->
+    <div class="modal modal-about">
+        <div class="modal-content profile-card">
+            <label for="pop-about" class="close-btn">&times;</label>
+            
+            <div class="profile-header">
+                <div class="avatar-placeholder">N</div>
+                <h2>Nengah</h2>
+                <span class="badge-status">Pelajar</span>
+            </div>
+
+            <div class="profile-details">
+                <!-- Kolom Sekolah -->
+                <div class="detail-box">
+                    <span class="detail-label">Sekolah</span>
+                    <a href="https://smktunasmedia.sch.id" target="_blank" rel="noopener noreferrer" class="school-link">
+                        SMK Tunas Media ↗
+                    </a>
+                </div>
+
+                <!-- Media Sosial -->
+                <div class="social-list">
+                    <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" rel="noopener noreferrer" class="social-item tiktok">
+                        <span>TikTok</span>
+                        <span class="handle">@nengahnengah5</span>
+                    </a>
+                    <a href="https://www.instagram.com/aryanengahdwi" target="_blank" rel="noopener noreferrer" class="social-item instagram">
+                        <span>Instagram</span>
+                        <span class="handle">@aryanengahdwi</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section / Perkenalan -->
     <section class="hero" id="about">
@@ -38,7 +77,7 @@
             <p>Klik pada kartu proyek untuk melihat penjelasan detailnya.</p>
         </div>
 
-        <!-- Saklar Checkbox untuk Pop-up (Trik CSS Tanpa JS) -->
+        <!-- Saklar Checkbox untuk Pop-up Proyek -->
         <input type="checkbox" id="pop1" class="saklar-modal">
         <input type="checkbox" id="pop2" class="saklar-modal">
 
@@ -57,7 +96,7 @@
                 </div>
             </label>
 
-            <!-- Kartu Proyek 2 (Menggunakan Video bg-awaw) -->
+            <!-- Kartu Proyek 2 (Video bg-awaw) -->
             <label for="pop2" class="project-card">
                 <div class="card-image">
                     <video autoplay loop muted playsinline class="card-video">
@@ -94,7 +133,7 @@
             </div>
         </div>
 
-        <!-- Modal Pop-up Penjelasan Proyek 2 (Menggunakan Video bg-awaw) -->
+        <!-- Modal Pop-up Penjelasan Proyek 2 (Video bg-awaw) -->
         <div class="modal modal-2">
             <div class="modal-content">
                 <label for="pop2" class="close-btn">&times;</label>
