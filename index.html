@@ -3,169 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Portofolio - Arya Nengah Dwi</title>
+    <style>
+        /* RESET & DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #333;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #888;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        /* SEKSI TENTANG SAYA */
+        .section {
+            padding: 50px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .about-text {
+            color: #aaa;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        /* TOMBOL SOSIAL MEDIA */
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .btn-social:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* PROYEK UNGGULAN (HTML ONLY TOGGLE) */
+        .project-card {
+            border: 1px solid #333;
+            margin-bottom: 20px;
+            background-color: #111;
+            transition: border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #666;
+        }
+
+        /* Menggunakan elemen details & summary untuk efek buka-tutup tanpa JavaScript */
+        details {
+            width: 100%;
+        }
+
+        summary {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #888;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: '-';
+            color: #fff;
+        }
+
+        .project-detail {
+            padding: 0 20px 20px 20px;
+            color: #aaa;
+            border-top: 1px solid #222;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px 10px;
+            background-color: #222;
+            color: #888;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER & KONTAK */
+        footer {
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .contact-box {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-box p {
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .phone-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .copyright {
+            color: #444;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Saklar Checkbox Pop-up "Tentang" (Trik CSS) -->
-    <input type="checkbox" id="pop-about" class="saklar-modal">
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Arya Nengah Dwi</h1>
+            <p>Personal Portfolio</p>
+        </header>
 
-    <!-- Navigasi Utama -->
-    <header>
-        <div class="logo">Portofolio.</div>
-        <nav>
-            <ul>
-                <!-- Klik 'Tentang' akan membuka Pop-up Profil -->
-                <li><label for="pop-about" class="nav-link">Tentang</label></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- TENTANG SAYA -->
+        <section class="section">
+            <h2>Tentang Saya</h2>
+            <p class="about-text">
+                Halo! Saya Arya Nengah Dwi. Saya berfokus pada pengembangan karya digital yang simpel, bersih, dan fungsional. 
+                Mari terhubung dengan saya melalui media sosial di bawah ini:
+            </p>
+            <div class="social-buttons">
+                <!-- Link Instagram -->
+                <a href="https://instagram.com/arya_nengah_dwi" target="_blank" class="btn-social">
+                    INSTAGRAM: @arya nengah dwi
+                </a>
+                <!-- Link TikTok -->
+                <a href="https://tiktok.com/@nengahnengah5" target="_blank" class="btn-social">
+                    TIKTOK: @nengahnengah5
+                </a>
+            </div>
+        </section>
 
-    <!-- Modal Pop-up Profil "Tentang" -->
-    <div class="modal modal-about">
-        <div class="modal-content profile-card">
-            <label for="pop-about" class="close-btn">&times;</label>
-            
-            <div class="profile-header">
-                <div class="avatar-placeholder">N</div>
-                <h2>Nengah</h2>
-                <span class="badge-status">Pelajar</span>
+        <!-- PROYEK UNGGULAN -->
+        <section class="section">
+            <h2>Proyek Unggulan</h2>
+
+            <!-- PROYEK 1 -->
+            <div class="project-card">
+                <details>
+                    <summary>
+                        <span>01. Desain Tampilan Web Minimalis</span>
+                    </summary>
+                    <div class="project-detail">
+                        <p>
+                            Proyek ini berfokus pada pembuatan antarmuka pengguna (UI) modern yang mengutamakan kenyamanan membaca dan kecepatan akses. 
+                            Dirancang menggunakan struktur berbasis hitam-putih untuk memberikan kesan profesional dan elegan.
+                        </p>
+                        <span class="project-tag">HTML5 / CSS3 / Minimalist UI</span>
+                    </div>
+                </details>
             </div>
 
-            <div class="profile-details">
-                <!-- Kolom Sekolah -->
-                <div class="detail-box">
-                    <span class="detail-label">Sekolah</span>
-                    <a href="https://smktunasmedia.sch.id" target="_blank" rel="noopener noreferrer" class="school-link">
-                        SMK Tunas Media ↗
-                    </a>
-                </div>
-
-                <!-- Media Sosial -->
-                <div class="social-list">
-                    <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" rel="noopener noreferrer" class="social-item tiktok">
-                        <span>TikTok</span>
-                        <span class="handle">@nengahnengah5</span>
-                    </a>
-                    <a href="https://www.instagram.com/aryanengahdwi" target="_blank" rel="noopener noreferrer" class="social-item instagram">
-                        <span>Instagram</span>
-                        <span class="handle">@aryanengahdwi</span>
-                    </a>
-                </div>
+            <!-- PROYEK 2 -->
+            <div class="project-card">
+                <details>
+                    <summary>
+                        <span>02. Platform Konten Kreatif</span>
+                    </summary>
+                    <div class="project-detail">
+                        <p>
+                            Pengembangan strategi visual dan pembuatan konten berbasis media sosial yang disesuaikan untuk kebutuhan personal branding. 
+                            Proyek ini mencakup editing video bertema estetik dan pengelolaan narasi visual yang konsisten.
+                        </p>
+                        <span class="project-tag">Content Creation / Social Media</span>
+                    </div>
+                </details>
             </div>
-        </div>
+        </section>
+
+        <!-- FOOTER & KONTAK -->
+        <footer>
+            <div class="contact-box">
+                <h2>Hubungi Saya</h2>
+                <p>Untuk kolaborasi atau pertanyaan lebih lanjut, silakan hubungi nomor di bawah ini:</p>
+                <!-- GANTI NOMOR TELEPON KAMU DI SINI -->
+                <div class="phone-number">+62 812-3456-7890</div>
+            </div>
+            <p class="copyright">&copy; Arya Nengah Dwi. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- Hero Section / Perkenalan -->
-    <section class="hero" id="about">
-        <div class="hero-content">
-            <span class="tag">Halo Semua 👋</span>
-            <h1>Kreator Digital & <br><span class="highlight">Developer Mungil</span></h1>
-            <p>Saya suka merancang dan membangun proyek digital yang estetik, modern, dan fungsional. Berfokus pada pengembangan aplikasi web dan desain grafis kreatif.</p>
-            <a href="#projects" class="btn">Lihat Proyek Saya</a>
-        </div>
-    </section>
-
-    <!-- Section Proyek Unggulan -->
-    <section class="projects-section" id="projects">
-        <div class="section-title">
-            <h2>Proyek Unggulan</h2>
-            <p>Klik pada kartu proyek untuk melihat penjelasan detailnya.</p>
-        </div>
-
-        <!-- Saklar Checkbox untuk Pop-up Proyek -->
-        <input type="checkbox" id="pop1" class="saklar-modal">
-        <input type="checkbox" id="pop2" class="saklar-modal">
-
-        <div class="projects-grid">
-            
-            <!-- Kartu Proyek 1 -->
-            <label for="pop1" class="project-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Preview Proyek 1">
-                </div>
-                <div class="card-info">
-                    <span class="category">Aplikasi Web</span>
-                    <h3>Aplikasi Manajemen Tugas</h3>
-                    <p>Aplikasi web interaktif untuk mengelola jadwal harian dengan fitur pengingat visual yang estetik.</p>
-                    <span class="link-text">Buka Penjelasan &rarr;</span>
-                </div>
-            </label>
-
-            <!-- Kartu Proyek 2 (Video bg-awaw) -->
-            <label for="pop2" class="project-card">
-                <div class="card-image">
-                    <video autoplay loop muted playsinline class="card-video">
-                        <source src="bg-awaw.mp4" type="video/mp4">
-                        Browser Anda tidak mendukung tag video.
-                    </video>
-                </div>
-                <div class="card-info">
-                    <span class="category">Desain Grafis</span>
-                    <h3>Koleksi Livery & Skin Kustom</h3>
-                    <p>Desain grafis vektor kustom beresolusi tinggi dengan tema cyberpunk dan efek neon estetik.</p>
-                    <span class="link-text">Buka Penjelasan &rarr;</span>
-                </div>
-            </label>
-
-        </div>
-
-        <!-- Modal Pop-up Penjelasan Proyek 1 -->
-        <div class="modal modal-1">
-            <div class="modal-content">
-                <label for="pop1" class="close-btn">&times;</label>
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Detail Proyek 1">
-                <h2>Aplikasi Manajemen Tugas</h2>
-                <span class="category">Aplikasi Web</span>
-                <p class="modal-description">
-                    Aplikasi ini dirancang untuk membantu pengguna mengatur rutinitas harian secara efisien. Dilengkapi dengan sistem kategori prioritas, pelacak kemajuan aktivitas, serta antarmuka berkecepatan tinggi dengan skema warna gelap yang nyaman di mata.
-                </p>
-                <div class="tech-stack">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>Web Design</span>
-                </div>
-                <a href="https://github.com" target="_blank" class="btn">Buka Link Demo / GitHub</a>
-            </div>
-        </div>
-
-        <!-- Modal Pop-up Penjelasan Proyek 2 (Video bg-awaw) -->
-        <div class="modal modal-2">
-            <div class="modal-content">
-                <label for="pop2" class="close-btn">&times;</label>
-                <video autoplay loop muted playsinline class="modal-video">
-                    <source src="bg-awaw.mp4" type="video/mp4">
-                    Browser Anda tidak mendukung tag video.
-                </video>
-                <h2>Koleksi Livery & Skin Kustom</h2>
-                <span class="category">Desain Grafis</span>
-                <p class="modal-description">
-                    Koleksi desain Livery / Skin kendaraan dengan presisi tinggi dan pemetaan tekstur jernih. Memadukan efek gradasi warna neon, pencahayaan realistis, serta gaya futuristik yang disesuaikan khusus untuk pemetaan template 3D.
-                </p>
-                <div class="tech-stack">
-                    <span>Photoshop</span>
-                    <span>Vector Design</span>
-                    <span>Texture Mapping</span>
-                </div>
-                <a href="https://github.com" target="_blank" class="btn">Lihat Galeri Kustom</a>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Footer / Kontak -->
-    <footer id="contact">
-        <h2>Mari Bekerja Sama</h2>
-        <p>Tertarik untuk berkolaborasi atau sekadar menyapa?</p>
-        <a href="mailto:emailanda@gmail.com" class="btn-outline">Kirim Email</a>
-        <div class="copyright">
-            &copy; 2026 Portofolio Saya. Dibuat dengan penuh dedikasi.
-        </div>
-    </footer>
-
 </body>
-</html>
+    </html>
