@@ -13,6 +13,17 @@
 </head>
 <body>
 
+    <!-- VIDEO BACKGROUND LOOPING -->
+    <video autoplay muted loop id="bg-video">
+        <!-- Ganti 'background.mp4' dengan nama/path file video kamu -->
+        <source src="background.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video HTML5.
+    </video>
+
+    <!-- Overlay Gelap (supaya teks portofolio tetap terbaca jelas di atas video) -->
+    <div class="video-overlay"></div>
+
+    <!-- KONTAINER PORTOFOLIO -->
     <div class="container">
         <!-- Header -->
         <header>
@@ -100,13 +111,10 @@
         </footer>
     </div>
 
-    <!-- Script JavaScript untuk fungsi pencet/klik proyek -->
+    <!-- Script JavaScript -->
     <script>
         function toggleProject(button) {
-            // Ambil elemen detail proyek di bawah tombol yang diklik
             const details = button.nextElementSibling;
-            
-            // Toggle kelas 'active' pada tombol dan detail
             button.classList.toggle('active');
             
             if (details.style.maxHeight) {
