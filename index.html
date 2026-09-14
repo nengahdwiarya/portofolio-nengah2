@@ -3,128 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Arya Nengah Dwi</title>
-    <!-- Font Google & Icon -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Arya Nengah Dwi - Portofolio Pixel</title>
+    <!-- Font Pixel ala Minecraft & Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Link Berkas CSS -->
+    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- VIDEO BACKGROUND LOOPING -->
+    <!-- VIDEO BACKGROUND -->
     <video autoplay muted loop id="bg-video">
-        <!-- Ganti 'background.mp4' dengan nama/path file video kamu -->
         <source src="background.mp4" type="video/mp4">
         Browser kamu tidak mendukung video HTML5.
     </video>
 
-    <!-- Overlay Gelap (supaya teks portofolio tetap terbaca jelas di atas video) -->
+    <!-- OVERLAY TIPIS BANGET BIAR TEXT TETEP KELIHATAN -->
     <div class="video-overlay"></div>
 
-    <!-- KONTAINER PORTOFOLIO -->
-    <div class="container">
+    <!-- MAIN CONTENT (TANPA KOTAK / KOLOM) -->
+    <div class="content">
         <!-- Header -->
         <header>
-            <h1>Arya Nengah Dwi</h1>
-            <p>Siswa / Praktisi Rekayasa Perangkat Lunak (RPL)</p>
+            <h1>ARYA NENGAH DWI</h1>
+            <p class="subtitle">&gt; REKAYASA PERANGKAT LUNAK &lt;</p>
         </header>
 
-        <!-- Penjelasan Jurusan RPL -->
-        <div class="card">
-            <h2>Tentang Jurusan RPL</h2>
+        <!-- Penjelasan RPL (Teks Murni) -->
+        <div class="section">
+            <h2>[ TENTANG RPL ]</h2>
             <p>
-                <strong>Rekayasa Perangkat Lunak (RPL)</strong> adalah jurusan yang mempelajari cara pengembangan perangkat lunak (software), mulai dari pembuatan website, aplikasi mobile, pengelolaan database, hingga kualitas software.
+                Rekayasa Perangkat Lunak (RPL) adalah jurusan yang mempelajari cara pembuatan software, website, aplikasi mobile, hingga pengelolaan database secara interaktif.
             </p>
             <div class="skills">
-                <span class="skill-tag">Web Development</span>
-                <span class="skill-tag">Mobile App Development</span>
-                <span class="skill-tag">Database Management</span>
-                <span class="skill-tag">Algoritma & Pemrograman</span>
-                <span class="skill-tag">UI/UX Design</span>
-            </div>
-        </div>
-
-        <!-- Bagian Proyek Unggulan -->
-        <div class="projects-section">
-            <h2>Proyek Unggulan</h2>
-            <p class="subtitle">Klik pada salah satu proyek untuk melihat penjelasannya:</p>
-
-            <!-- Proyek 1 -->
-            <div class="project-item">
-                <button class="project-header" onclick="toggleProject(this)">
-                    <span><i class="fas fa-globe"></i> Website Kasir Toko Online (Point of Sale)</span>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </button>
-                <div class="project-details">
-                    <p>Proyek ini adalah sistem kasir berbasis web yang dirancang untuk membantu UMKM mengelola stok barang, transaksi penjualan, dan laporan keuangan harian secara otomatis.</p>
-                    <p><strong>Fitur Utama:</strong> Login Multi-user, Pencetakan Struk, Grafik Penjualan, & Manajemen Stok.</p>
-                    <p><strong>Teknologi:</strong> PHP, MySQL, Bootstrap, JavaScript.</p>
-                </div>
-            </div>
-
-            <!-- Proyek 2 -->
-            <div class="project-item">
-                <button class="project-header" onclick="toggleProject(this)">
-                    <span><i class="fas fa-mobile-alt"></i> Aplikasi Catatan Tugas Sekolah</span>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </button>
-                <div class="project-details">
-                    <p>Aplikasi mobile sederhana untuk mencatat dan mengorganisir deadline tugas sekolah siswa dengan fitur notifikasi pengingat.</p>
-                    <p><strong>Fitur Utama:</strong> Pengingat waktu (Reminder), Kategori Mata Pelajaran, & Mode Gelap (Dark Mode).</p>
-                    <p><strong>Teknologi:</strong> Flutter / Android Studio, SQLite.</p>
-                </div>
-            </div>
-
-            <!-- Proyek 3 -->
-            <div class="project-item">
-                <button class="project-header" onclick="toggleProject(this)">
-                    <span><i class="fas fa-user-shield"></i> Sistem Absensi Siswa Berbasis QR Code</span>
-                    <i class="fas fa-chevron-down arrow"></i>
-                </button>
-                <div class="project-details">
-                    <p>Sistem rekap absensi otomatis yang mempercepat proses presensi kelas hanya dengan memindai (scan) QR Code unik dari kartu pelajar.</p>
-                    <p><strong>Fitur Utama:</strong> Scan QR Code Cepat, Export Data ke Excel, & Rekapitulasi Bulanan.</p>
-                    <p><strong>Teknologi:</strong> HTML5, CSS3, JavaScript, Node.js.</p>
-                </div>
+                <span>#WebDev</span>
+                <span>#MobileApp</span>
+                <span>#Database</span>
+                <span>#UI/UX</span>
             </div>
         </div>
 
         <!-- Tombol Sosial Media -->
         <div class="social-section">
-            <h3>Mari Terhubung!</h3>
+            <h3>[ LINK SOSMED ]</h3>
             <div class="social-links">
                 <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="btn-social btn-instagram">
-                    <i class="fab fa-instagram"></i> Instagram (@aryanengahdwi)
+                    <i class="fab fa-instagram"></i> INSTAGRAM
                 </a>
                 
                 <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="btn-social btn-tiktok">
-                    <i class="fab fa-tiktok"></i> TikTok (@nengahnengah5)
+                    <i class="fab fa-tiktok"></i> TIKTOK
                 </a>
             </div>
         </div>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Arya Nengah Dwi. All rights reserved.</p>
+            <p>&copy; 2026 ARYA NENGAH DWI</p>
         </footer>
     </div>
 
-    <!-- Script JavaScript -->
-    <script>
-        function toggleProject(button) {
-            const details = button.nextElementSibling;
-            button.classList.toggle('active');
-            
-            if (details.style.maxHeight) {
-                details.style.maxHeight = null;
-                details.style.padding = "0 15px";
-            } else {
-                details.style.maxHeight = details.scrollHeight + 30 + "px";
-                details.style.padding = "15px";
-            }
-        }
-    </script>
 </body>
 </html>
