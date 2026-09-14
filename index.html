@@ -4,264 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Arya Nengah Dwi</title>
+    <!-- Font Google (Inter) untuk tampilan modern & elegan -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icon FontAwesome untuk ikon media sosial -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* RESET & DASAR */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #0a0a0a;
-            color: #f0f0f0;
+            background-color: #0f172a; /* Warna latar belakang gelap (Dark Navy) */
+            color: #f8fafc; /* Warna teks terang */
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            width: 100%;
+            background: rgba(30, 41, 59, 0.7);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* HEADER */
         header {
             text-align: center;
-            padding-bottom: 50px;
-            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
         }
 
         header h1 {
             font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
             font-weight: 700;
-            margin-bottom: 10px;
+            color: #38bdf8;
+            margin-bottom: 5px;
         }
 
         header p {
-            color: #888;
+            color: #94a3b8;
             font-size: 1.1rem;
-            letter-spacing: 1px;
         }
 
-        /* SEKSI TENTANG SAYA */
-        .section {
-            padding: 50px 0;
-            border-bottom: 1px solid #222;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .about-text {
-            color: #aaa;
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
             margin-bottom: 25px;
-            font-size: 1rem;
+            border-left: 4px solid #38bdf8;
         }
 
-        /* TOMBOL SOSIAL MEDIA */
-        .social-buttons {
+        .card h2 {
+            font-size: 1.4rem;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 0.98rem;
+            margin-bottom: 10px;
+        }
+
+        .skills {
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .social-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-section h3 {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn-social {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #fff;
-            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            background: transparent;
+            color: #ffffff;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .btn-tiktok {
+            background: #000000;
+            border: 1px solid #333;
         }
 
         .btn-social:hover {
-            background-color: #fff;
-            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
         }
 
-        /* PROYEK UNGGULAN (HTML ONLY TOGGLE) */
-        .project-card {
-            border: 1px solid #333;
-            margin-bottom: 20px;
-            background-color: #111;
-            transition: border-color 0.3s ease;
-        }
-
-        .project-card:hover {
-            border-color: #666;
-        }
-
-        /* Menggunakan elemen details & summary untuk efek buka-tutup tanpa JavaScript */
-        details {
-            width: 100%;
-        }
-
-        summary {
-            padding: 20px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: #888;
-            transition: transform 0.3s ease;
-        }
-
-        details[open] summary::after {
-            content: '-';
-            color: #fff;
-        }
-
-        .project-detail {
-            padding: 0 20px 20px 20px;
-            color: #aaa;
-            border-top: 1px solid #222;
-            margin-top: 10px;
-            padding-top: 15px;
-            font-size: 0.95rem;
-        }
-
-        .project-tag {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 4px 10px;
-            background-color: #222;
-            color: #888;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        /* FOOTER & KONTAK */
         footer {
-            padding-top: 50px;
             text-align: center;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 0.85rem;
         }
 
-        .contact-box {
-            background-color: #111;
-            border: 1px solid #333;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-
-        .contact-box p {
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .phone-number {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .copyright {
-            color: #444;
-            font-size: 0.8rem;
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .social-links {
+                flex-direction: column;
+            }
+            .btn-social {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- HEADER -->
+        <!-- Header -->
         <header>
-            <h1>AryaNengahDwi</h1>
-            <p>Personal Portfolio</p>
+            <h1>Arya Nengah Dwi</h1>
+            <p>Siswa / Praktisi Rekayasa Perangkat Lunak (RPL)</p>
         </header>
 
-        <!-- TENTANG SAYA -->
-        <section class="section">
-            <h2>Tentang Saya</h2>
-            <p class="about-text">
-                Halo! Saya Arya Nengah Dwi. Saya berfokus pada pengembangan karya digital yang simpel, bersih, dan fungsional. 
-                Mari terhubung dengan saya melalui media sosial di bawah ini:
+        <!-- Penjelasan Jurusan RPL -->
+        <div class="card">
+            <h2>Tentang Jurusan RPL</h2>
+            <p>
+                <strong>Rekayasa Perangkat Lunak (RPL)</strong> adalah salah satu jurusan di bidang keahlian Teknologi Informasi dan Komunikasi yang mempelajari cara-cara pengembangan perangkat lunak (software), mulai dari pembuatan, pemeliharaan, manajemen organisasi pengembangan software, hingga manajemen kualitas.
             </p>
-            <div class="social-buttons">
-                <!-- Link Instagram -->
-                <a href="https://instagram.com/arya_nengah_dwi" target="_blank" class="btn-social">
-                    INSTAGRAM: @arya nengah dwi
+            <p>
+                Di jurusan RPL, kami fokus mempelajari berbagai hal penting dalam dunia digital modern, seperti:
+            </p>
+            <div class="skills">
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Mobile App Development</span>
+                <span class="skill-tag">Database Management</span>
+                <span class="skill-tag">Algoritma & Pemrograman</span>
+                <span class="skill-tag">UI/UX Design</span>
+            </div>
+        </div>
+
+        <!-- Tombol Sosial Media -->
+        <div class="social-section">
+            <h3>Mari Terhubung!</h3>
+            <div class="social-links">
+                <!-- Tombol Instagram -->
+                <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="btn-social btn-instagram">
+                    <i class="fab fa-instagram"></i> Instagram (@aryanengahdwi)
                 </a>
-                <!-- Link TikTok -->
-                <a href="https://tiktok.com/@nengahnengah5" target="_blank" class="btn-social">
-                    TIKTOK: @nengahnengah5
+                
+                <!-- Tombol TikTok -->
+                <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="btn-social btn-tiktok">
+                    <i class="fab fa-tiktok"></i> TikTok (@nengahnengah5)
                 </a>
             </div>
-        </section>
+        </div>
 
-        <!-- PROYEK UNGGULAN -->
-        <section class="section">
-            <h2>Proyek Unggulan</h2>
-
-            <!-- PROYEK 1 -->
-            <div class="project-card">
-                <details>
-                    <summary>
-                        <span>01. Desain Tampilan Web Minimalis</span>
-                    </summary>
-                    <div class="project-detail">
-                        <p>
-                            Proyek ini berfokus pada pembuatan antarmuka pengguna (UI) modern yang mengutamakan kenyamanan membaca dan kecepatan akses. 
-                            Dirancang menggunakan struktur berbasis hitam-putih untuk memberikan kesan profesional dan elegan.
-                        </p>
-                        <span class="project-tag">HTML5 / CSS3 / Minimalist UI</span>
-                    </div>
-                </details>
-            </div>
-
-            <!-- PROYEK 2 -->
-            <div class="project-card">
-                <details>
-                    <summary>
-                        <span>02. Platform Konten Kreatif</span>
-                    </summary>
-                    <div class="project-detail">
-                        <p>
-                            Pengembangan strategi visual dan pembuatan konten berbasis media sosial yang disesuaikan untuk kebutuhan personal branding. 
-                            Proyek ini mencakup editing video bertema estetik dan pengelolaan narasi visual yang konsisten.
-                        </p>
-                        <span class="project-tag">Content Creation / Social Media</span>
-                    </div>
-                </details>
-            </div>
-        </section>
-
-        <!-- FOOTER & KONTAK -->
+        <!-- Footer -->
         <footer>
-            <div class="contact-box">
-                <h2>Hubungi Saya</h2>
-                <p>Untuk kolaborasi atau pertanyaan lebih lanjut, silakan hubungi nomor di bawah ini:</p>
-                <!-- GANTI NOMOR TELEPON KAMU DI SINI -->
-                <div class="phone-number">+62 812-3456-7890</div>
-            </div>
-            <p class="copyright">&copy; Arya Nengah Dwi. All rights reserved.</p>
+            <p>&copy; 2026 Arya Nengah Dwi. All rights reserved.</p>
         </footer>
     </div>
 
 </body>
-    </html>
+</html>
