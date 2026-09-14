@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Font Minecraft Style (Press Start 2P) */
     font-family: 'Press Start 2P', monospace;
 }
 
@@ -12,12 +11,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px 20px;
     color: #ffffff;
     overflow-x: hidden;
 }
 
-/* VIDEO BACKGROUND (FULLSCREEN) */
+/* VIDEO BACKGROUND */
 #bg-video {
     position: fixed;
     top: 0;
@@ -28,20 +27,20 @@ body {
     z-index: -2;
 }
 
-/* OVERLAY TRANSPARAN */
+/* OVERLAY TRANSPARAN TIPIS */
 .video-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.2); /* Sangat tipis */
+    background: rgba(0, 0, 0, 0.2);
     z-index: -1;
 }
 
-/* KONTAINER UTAMA (TANPA BOX / KHUSUS TEKS) */
+/* KONTAINER UTAMA */
 .content {
-    max-width: 850px;
+    max-width: 950px;
     width: 100%;
     text-align: center;
     z-index: 1;
@@ -50,28 +49,28 @@ body {
 /* HEADER */
 header h1 {
     font-size: 1.8rem;
-    color: #55ff55; /* Warna hijau khas Minecraft */
+    color: #55ff55;
     margin-bottom: 15px;
-    text-shadow: 4px 4px 0px #000000; /* Shadow kotak khas 8-bit */
+    text-shadow: 4px 4px 0px #000000;
     line-height: 1.4;
 }
 
 header .subtitle {
-    color: #ffff55; /* Warna kuning Minecraft */
+    color: #ffff55;
     font-size: 0.8rem;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-shadow: 3px 3px 0px #000000;
 }
 
-/* SEKSI PENJELASAN (TEKS MELAYANG) */
+/* SEKSI PENJELASAN */
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .section h2 {
-    font-size: 1.2rem;
-    color: #55ffff; /* Warna Aqua Minecraft */
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #55ffff;
+    margin-bottom: 15px;
     text-shadow: 3px 3px 0px #000000;
 }
 
@@ -80,7 +79,7 @@ header .subtitle {
     line-height: 2.2;
     color: #ffffff;
     text-shadow: 2px 2px 0px #000000;
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
@@ -89,7 +88,7 @@ header .subtitle {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .skills span {
@@ -98,15 +97,103 @@ header .subtitle {
     text-shadow: 2px 2px 0px #000000;
 }
 
+/* STIL PROYEK UNGGULAN MENYAMPING (GRID) */
+.projects-section {
+    margin-bottom: 40px;
+}
+
+.projects-section h2 {
+    font-size: 1.1rem;
+    color: #ff5555;
+    margin-bottom: 8px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+.subtitle-project {
+    color: #aaaaaa;
+    font-size: 0.6rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+/* GRID MENYAMPING */
+.projects-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Menyesuaikan otomatis jika layar sempit */
+}
+
+.project-item {
+    flex: 1;
+    min-width: 250px; /* Lebar minimum per kolom menyamping */
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ffffff;
+    box-shadow: 4px 4px 0px #000000;
+    overflow: hidden;
+}
+
+.project-header {
+    width: 100%;
+    background: transparent;
+    color: #ffff55;
+    padding: 12px 10px;
+    font-size: 0.65rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 2px 2px 0px #000000;
+    transition: background 0.2s ease;
+}
+
+.project-header:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.project-header i.arrow {
+    color: #55ff55;
+    transition: transform 0.3s ease;
+}
+
+.project-header.active i.arrow {
+    transform: rotate(180deg);
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.project-details p {
+    font-size: 0.6rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.project-details strong {
+    color: #55ffff;
+}
+
 /* SOSIAL MEDIA */
 .social-section {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .social-section h3 {
     font-size: 1rem;
     color: #ffaa00;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-shadow: 3px 3px 0px #000000;
 }
 
@@ -125,7 +212,6 @@ header .subtitle {
     text-decoration: none;
     font-size: 0.75rem;
     color: #ffffff;
-    /* Desain Tombol ala Item Minecraft (Pixel Border) */
     background: rgba(0, 0, 0, 0.6);
     border: 3px solid #ffffff;
     box-shadow: 4px 4px 0px #000000;
@@ -139,33 +225,26 @@ header .subtitle {
     color: #000000;
 }
 
-.btn-social:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #000000;
-}
-
 /* FOOTER */
 footer {
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 0.6rem;
     color: #aaaaaa;
     text-shadow: 2px 2px 0px #000000;
 }
 
-/* RESPONSIVE HP */
+/* RESPONSIVE UNTUK HP */
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.2rem;
     }
-    header .subtitle {
-        font-size: 0.65rem;
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
     }
-    .section h2 {
-        font-size: 0.9rem;
-    }
-    .section p {
-        font-size: 0.65rem;
-        line-height: 2;
+    .project-item {
+        width: 100%;
+        max-width: 100%;
     }
     .social-links {
         flex-direction: column;
