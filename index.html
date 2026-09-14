@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arya Nengah Dwi - Portofolio Pixel</title>
     <!-- Font Pixel ala Minecraft & Icon -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Link CSS -->
@@ -19,10 +19,10 @@
         Browser kamu tidak mendukung video HTML5.
     </video>
 
-    <!-- OVERLAY TIPIS BANGET BIAR TEXT TETEP KELIHATAN -->
+    <!-- OVERLAY TIPIS -->
     <div class="video-overlay"></div>
 
-    <!-- MAIN CONTENT (TANPA KOTAK / KOLOM) -->
+    <!-- MAIN CONTENT -->
     <div class="content">
         <!-- Header -->
         <header>
@@ -30,7 +30,7 @@
             <p class="subtitle">&gt; REKAYASA PERANGKAT LUNAK &lt;</p>
         </header>
 
-        <!-- Penjelasan RPL (Teks Murni) -->
+        <!-- Penjelasan RPL -->
         <div class="section">
             <h2>[ TENTANG RPL ]</h2>
             <p>
@@ -41,6 +41,51 @@
                 <span>#MobileApp</span>
                 <span>#Database</span>
                 <span>#UI/UX</span>
+            </div>
+        </div>
+
+        <!-- Bagian Proyek Unggulan (Menyamping) -->
+        <div class="projects-section">
+            <h2>[ PROYEK UNGGULAN ]</h2>
+            <p class="subtitle-project">( KLIK PROYEK UTK DETAIL )</p>
+
+            <!-- Grid Menyamping -->
+            <div class="projects-grid">
+                <!-- Proyek 1 -->
+                <div class="project-item">
+                    <button class="project-header" onclick="toggleProject(this)">
+                        <span><i class="fas fa-globe"></i> POS Kasir</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="project-details">
+                        <p>Sistem kasir berbasis web untuk kelola stok & transaksi UMKM secara otomatis.</p>
+                        <p><strong>Tech:</strong> PHP, MySQL</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="project-item">
+                    <button class="project-header" onclick="toggleProject(this)">
+                        <span><i class="fas fa-mobile-alt"></i> Catatan Tugas</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="project-details">
+                        <p>Aplikasi mobile pengingat deadline tugas sekolah dengan notifikasi.</p>
+                        <p><strong>Tech:</strong> Flutter, SQLite</p>
+                    </div>
+                </div>
+
+                <!-- Proyek 3 -->
+                <div class="project-item">
+                    <button class="project-header" onclick="toggleProject(this)">
+                        <span><i class="fas fa-qrcode"></i> Absensi QR</span>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="project-details">
+                        <p>Sistem presensi cepat menggunakan scan QR Code kartu pelajar.</p>
+                        <p><strong>Tech:</strong> JS, Node.js</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -64,5 +109,20 @@
         </footer>
     </div>
 
+    <!-- Script Javascript Toggle Proyek -->
+    <script>
+        function toggleProject(button) {
+            const details = button.nextElementSibling;
+            button.classList.toggle('active');
+            
+            if (details.style.maxHeight) {
+                details.style.maxHeight = null;
+                details.style.padding = "0 10px";
+            } else {
+                details.style.maxHeight = details.scrollHeight + 20 + "px";
+                details.style.padding = "10px";
+            }
+        }
+    </script>
 </body>
 </html>
