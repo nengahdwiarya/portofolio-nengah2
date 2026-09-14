@@ -12,43 +12,44 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    color: #f8fafc;
+    color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* STIL VIDEO BACKGROUND */
+/* VIDEO BACKGROUND */
 #bg-video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Agar video selalu memenuhi layar tanpa gepeng */
-    z-index: -2; /* Di belakang sendiri */
+    object-fit: cover;
+    z-index: -2;
 }
 
-/* OVERLAY GELAP AGAR TEKS TETAP TERBACA */
+/* OVERLAY GELAP (Diturunkan kegelapannya dari 0.75 ke 0.4 agar video makin jelas) */
 .video-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(15, 23, 42, 0.75); /* Lapisan hitam transparan */
+    background: rgba(15, 23, 42, 0.4); 
     z-index: -1;
 }
 
-/* KONTAINER UTAMA */
+/* KONTAINER UTAMA (Dibuat transparan tipis + efek blur lebih kuat) */
 .container {
     max-width: 800px;
     width: 100%;
-    background: rgba(30, 41, 59, 0.65); /* Efek transparan/kaca */
+    background: rgba(15, 23, 42, 0.35); /* Transparan 35% */
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(12px); /* Efek buram di belakang kartu */
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(16px); /* Efek kaca diperkuat */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     z-index: 1;
 }
 
@@ -62,31 +63,40 @@ header h1 {
     font-weight: 700;
     color: #38bdf8;
     margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Shadow agar teks tajam */
 }
 
 header p {
-    color: #94a3b8;
+    color: #e2e8f0;
     font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+/* KARTU PENJELASAN (Transparan 40%) */
 .card {
-    background: rgba(30, 41, 59, 0.8);
+    background: rgba(30, 41, 59, 0.4);
     padding: 25px;
     border-radius: 12px;
     margin-bottom: 25px;
     border-left: 4px solid #38bdf8;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card h2 {
     font-size: 1.4rem;
-    color: #f1f5f9;
+    color: #ffffff;
     margin-bottom: 12px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .card p {
-    color: #cbd5e1;
+    color: #f1f5f9;
     font-size: 0.98rem;
     margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .skills {
@@ -97,44 +107,48 @@ header p {
 }
 
 .skill-tag {
-    background: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.25);
+    color: #7dd3fc;
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(56, 189, 248, 0.4);
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* BAGIAN PROYEK */
+/* BAGIAN PROYEK UNGGULAN (Transparan) */
 .projects-section {
     margin-bottom: 30px;
 }
 
 .projects-section h2 {
     font-size: 1.4rem;
-    color: #f1f5f9;
+    color: #ffffff;
     margin-bottom: 5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .subtitle {
-    color: #94a3b8;
+    color: #cbd5e1;
     font-size: 0.9rem;
     margin-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .project-item {
     margin-bottom: 12px;
     border-radius: 8px;
     overflow: hidden;
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 .project-header {
     width: 100%;
     background: transparent;
-    color: #f8fafc;
+    color: #ffffff;
     padding: 15px 20px;
     font-size: 1rem;
     font-weight: 600;
@@ -146,10 +160,11 @@ header p {
     justify-content: space-between;
     align-items: center;
     transition: background 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .project-header:hover {
-    background: rgba(51, 65, 85, 0.8);
+    background: rgba(56, 189, 248, 0.2);
 }
 
 .project-header i.arrow {
@@ -165,14 +180,15 @@ header p {
     max-height: 0;
     overflow: hidden;
     padding: 0 15px;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.5); /* Detail proyek transparan */
     transition: max-height 0.4s ease, padding 0.3s ease;
 }
 
 .project-details p {
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: #f1f5f9;
     margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* SOSIAL MEDIA */
@@ -183,8 +199,9 @@ header p {
 
 .social-section h3 {
     font-size: 1.1rem;
-    color: #94a3b8;
+    color: #e2e8f0;
     margin-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .social-links {
@@ -205,28 +222,30 @@ header p {
     font-size: 0.95rem;
     transition: all 0.3s ease;
     color: #ffffff;
+    backdrop-filter: blur(4px);
 }
 
 .btn-instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, rgba(240, 148, 51, 0.85) 0%, rgba(230, 104, 60, 0.85) 25%, rgba(220, 39, 67, 0.85) 50%, rgba(204, 35, 102, 0.85) 75%, rgba(188, 24, 136, 0.85) 100%);
 }
 
 .btn-tiktok {
-    background: #000000;
-    border: 1px solid #333;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-social:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    opacity: 0.95;
 }
 
 footer {
     text-align: center;
     margin-top: 40px;
-    color: #94a3b8;
+    color: #cbd5e1;
     font-size: 0.85rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 600px) {
