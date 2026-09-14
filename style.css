@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    /* Font Minecraft Style (Press Start 2P) */
+    font-family: 'Press Start 2P', monospace;
 }
 
 body {
@@ -11,13 +12,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 20px;
     color: #ffffff;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* VIDEO BACKGROUND FULL TERANG */
+/* VIDEO BACKGROUND (FULLSCREEN) */
 #bg-video {
     position: fixed;
     top: 0;
@@ -28,238 +28,144 @@ body {
     z-index: -2;
 }
 
-/* OVERLAY TRANSPARAN TIPIS BANGET (Supaya video kelihatan asli & terang) */
+/* OVERLAY TRANSPARAN */
 .video-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.15); /* Cuma 15% kegelapan */
+    background: rgba(0, 0, 0, 0.2); /* Sangat tipis */
     z-index: -1;
 }
 
-/* KONTAINER UTAMA (Ultra Transparan 15%) */
-.container {
-    max-width: 800px;
+/* KONTAINER UTAMA (TANPA BOX / KHUSUS TEKS) */
+.content {
+    max-width: 850px;
     width: 100%;
-    background: rgba(15, 23, 42, 0.15); /* Super bening */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px); /* Blur tipis biar video tetap jelas */
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
     z-index: 1;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+/* HEADER */
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #38bdf8;
-    margin-bottom: 5px;
-    /* Shadow hitam tebal agar teks tidak 'tenggelam' di video */
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.8);
+    font-size: 1.8rem;
+    color: #55ff55; /* Warna hijau khas Minecraft */
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 0px #000000; /* Shadow kotak khas 8-bit */
+    line-height: 1.4;
 }
 
-header p {
+header .subtitle {
+    color: #ffff55; /* Warna kuning Minecraft */
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+/* SEKSI PENJELASAN (TEKS MELAYANG) */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: 1.2rem;
+    color: #55ffff; /* Warna Aqua Minecraft */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px #000000;
+}
+
+.section p {
+    font-size: 0.75rem;
+    line-height: 2.2;
     color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
-}
-
-/* KARTU PENJELASAN (Transparan 20%) */
-.card {
-    background: rgba(15, 23, 42, 0.25);
-    padding: 25px;
-    border-radius: 14px;
-    margin-bottom: 25px;
-    border-left: 4px solid #38bdf8;
-    backdrop-filter: blur(4px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card h2 {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 12px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
-}
-
-.card p {
-    color: #ffffff;
-    font-size: 0.98rem;
-    margin-bottom: 10px;
-    font-weight: 500;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 0px #000000;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .skills {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-.skill-tag {
-    background: rgba(56, 189, 248, 0.35);
-    color: #ffffff;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(4px);
-}
-
-/* BAGIAN PROYEK UNGGULAN */
-.projects-section {
-    margin-bottom: 30px;
-}
-
-.projects-section h2 {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 5px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
-}
-
-.subtitle {
-    color: #ffffff;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-}
-
-.project-item {
-    margin-bottom: 12px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: rgba(15, 23, 42, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
-}
-
-.project-header {
-    width: 100%;
-    background: transparent;
-    color: #ffffff;
-    padding: 15px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s ease;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-}
-
-.project-header:hover {
-    background: rgba(56, 189, 248, 0.3);
-}
-
-.project-header i.arrow {
-    transition: transform 0.3s ease;
-    color: #38bdf8;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
-}
-
-.project-header.active i.arrow {
-    transform: rotate(180deg);
-}
-
-.project-details {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 15px;
-    background: rgba(0, 0, 0, 0.35); /* Transparan saat di-klik */
-    transition: max-height 0.4s ease, padding 0.3s ease;
-}
-
-.project-details p {
-    font-size: 0.9rem;
-    color: #ffffff;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+.skills span {
+    color: #ff55ff;
+    font-size: 0.7rem;
+    text-shadow: 2px 2px 0px #000000;
 }
 
 /* SOSIAL MEDIA */
 .social-section {
-    text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .social-section h3 {
-    font-size: 1.1rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    font-size: 1rem;
+    color: #ffaa00;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 0px #000000;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .btn-social {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 24px;
-    border-radius: 10px;
+    gap: 12px;
+    padding: 14px 24px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    font-size: 0.75rem;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.btn-instagram {
-    background: linear-gradient(45deg, rgba(240, 148, 51, 0.75) 0%, rgba(230, 104, 60, 0.75) 25%, rgba(220, 39, 67, 0.75) 50%, rgba(204, 35, 102, 0.75) 75%, rgba(188, 24, 136, 0.75) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.btn-tiktok {
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Desain Tombol ala Item Minecraft (Pixel Border) */
+    background: rgba(0, 0, 0, 0.6);
+    border: 3px solid #ffffff;
+    box-shadow: 4px 4px 0px #000000;
+    transition: all 0.1s ease;
 }
 
 .btn-social:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    opacity: 0.95;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+    background: #ffffff;
+    color: #000000;
 }
 
+.btn-social:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000000;
+}
+
+/* FOOTER */
 footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #ffffff;
-    font-size: 0.85rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    margin-top: 50px;
+    font-size: 0.6rem;
+    color: #aaaaaa;
+    text-shadow: 2px 2px 0px #000000;
 }
 
+/* RESPONSIVE HP */
 @media (max-width: 600px) {
-    .container {
-        padding: 25px 20px;
-    }
     header h1 {
-        font-size: 2rem;
+        font-size: 1.2rem;
+    }
+    header .subtitle {
+        font-size: 0.65rem;
+    }
+    .section h2 {
+        font-size: 0.9rem;
+    }
+    .section p {
+        font-size: 0.65rem;
+        line-height: 2;
     }
     .social-links {
         flex-direction: column;
