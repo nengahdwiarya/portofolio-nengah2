@@ -4,164 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Arya Nengah Dwi</title>
-    <!-- Font Google (Inter) untuk tampilan modern & elegan -->
+    <!-- Font Google & Icon -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Icon FontAwesome untuk ikon media sosial -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #0f172a; /* Warna latar belakang gelap (Dark Navy) */
-            color: #f8fafc; /* Warna teks terang */
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: rgba(30, 41, 59, 0.7);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #38bdf8;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border-left: 4px solid #38bdf8;
-        }
-
-        .card h2 {
-            font-size: 1.4rem;
-            color: #f1f5f9;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #cbd5e1;
-            font-size: 0.98rem;
-            margin-bottom: 10px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .skill-tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-
-        .social-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .social-section h3 {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-social {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            color: #ffffff;
-        }
-
-        .btn-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .btn-tiktok {
-            background: #000000;
-            border: 1px solid #333;
-        }
-
-        .btn-social:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            opacity: 0.9;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #64748b;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px 20px;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            .social-links {
-                flex-direction: column;
-            }
-            .btn-social {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <!-- Link Berkas CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -176,10 +24,7 @@
         <div class="card">
             <h2>Tentang Jurusan RPL</h2>
             <p>
-                <strong>Rekayasa Perangkat Lunak (RPL)</strong> adalah salah satu jurusan di bidang keahlian Teknologi Informasi dan Komunikasi yang mempelajari cara-cara pengembangan perangkat lunak (software), mulai dari pembuatan, pemeliharaan, manajemen organisasi pengembangan software, hingga manajemen kualitas.
-            </p>
-            <p>
-                Di jurusan RPL, kami fokus mempelajari berbagai hal penting dalam dunia digital modern, seperti:
+                <strong>Rekayasa Perangkat Lunak (RPL)</strong> adalah jurusan yang mempelajari cara pengembangan perangkat lunak (software), mulai dari pembuatan website, aplikasi mobile, pengelolaan database, hingga kualitas software.
             </p>
             <div class="skills">
                 <span class="skill-tag">Web Development</span>
@@ -190,16 +35,59 @@
             </div>
         </div>
 
+        <!-- Bagian Proyek Unggulan -->
+        <div class="projects-section">
+            <h2>Proyek Unggulan</h2>
+            <p class="subtitle">Klik pada salah satu proyek untuk melihat penjelasannya:</p>
+
+            <!-- Proyek 1 -->
+            <div class="project-item">
+                <button class="project-header" onclick="toggleProject(this)">
+                    <span><i class="fas fa-globe"></i> Website Kasir Toko Online (Point of Sale)</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </button>
+                <div class="project-details">
+                    <p>Proyek ini adalah sistem kasir berbasis web yang dirancang untuk membantu UMKM mengelola stok barang, transaksi penjualan, dan laporan keuangan harian secara otomatis.</p>
+                    <p><strong>Fitur Utama:</strong> Login Multi-user, Pencetakan Struk, Grafik Penjualan, & Manajemen Stok.</p>
+                    <p><strong>Teknologi:</strong> PHP, MySQL, Bootstrap, JavaScript.</p>
+                </div>
+            </div>
+
+            <!-- Proyek 2 -->
+            <div class="project-item">
+                <button class="project-header" onclick="toggleProject(this)">
+                    <span><i class="fas fa-mobile-alt"></i> Aplikasi Catatan Tugas Sekolah</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </button>
+                <div class="project-details">
+                    <p>Aplikasi mobile sederhana untuk mencatat dan mengorganisir deadline tugas sekolah siswa dengan fitur notifikasi pengingat.</p>
+                    <p><strong>Fitur Utama:</strong> Pengingat waktu (Reminder), Kategori Mata Pelajaran, & Mode Gelap (Dark Mode).</p>
+                    <p><strong>Teknologi:</strong> Flutter / Android Studio, SQLite.</p>
+                </div>
+            </div>
+
+            <!-- Proyek 3 -->
+            <div class="project-item">
+                <button class="project-header" onclick="toggleProject(this)">
+                    <span><i class="fas fa-user-shield"></i> Sistem Absensi Siswa Berbasis QR Code</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </button>
+                <div class="project-details">
+                    <p>Sistem rekap absensi otomatis yang mempercepat proses presensi kelas hanya dengan memindai (scan) QR Code unik dari kartu pelajar.</p>
+                    <p><strong>Fitur Utama:</strong> Scan QR Code Cepat, Export Data ke Excel, & Rekapitulasi Bulanan.</p>
+                    <p><strong>Teknologi:</strong> HTML5, CSS3, JavaScript, Node.js.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Tombol Sosial Media -->
         <div class="social-section">
             <h3>Mari Terhubung!</h3>
             <div class="social-links">
-                <!-- Tombol Instagram -->
                 <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="btn-social btn-instagram">
                     <i class="fab fa-instagram"></i> Instagram (@aryanengahdwi)
                 </a>
                 
-                <!-- Tombol TikTok -->
                 <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="btn-social btn-tiktok">
                     <i class="fab fa-tiktok"></i> TikTok (@nengahnengah5)
                 </a>
@@ -212,5 +100,23 @@
         </footer>
     </div>
 
+    <!-- Script JavaScript untuk fungsi pencet/klik proyek -->
+    <script>
+        function toggleProject(button) {
+            // Ambil elemen detail proyek di bawah tombol yang diklik
+            const details = button.nextElementSibling;
+            
+            // Toggle kelas 'active' pada tombol dan detail
+            button.classList.toggle('active');
+            
+            if (details.style.maxHeight) {
+                details.style.maxHeight = null;
+                details.style.padding = "0 15px";
+            } else {
+                details.style.maxHeight = details.scrollHeight + 30 + "px";
+                details.style.padding = "15px";
+            }
+        }
+    </script>
 </body>
 </html>
