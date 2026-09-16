@@ -1,256 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+:root {
+    --bg-color: #000000;
+    --card-bg: #111111;
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --border-color: #27272a;
+    --accent-white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Press Start 2P', monospace;
 }
 
 body {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 20px;
-    color: #ffffff;
-    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
 }
 
-/* VIDEO BACKGROUND */
-#bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -2;
-}
-
-/* OVERLAY TRANSPARAN TIPIS */
-.video-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: -1;
-}
-
-/* KONTAINER UTAMA */
-.content {
-    max-width: 950px;
-    width: 100%;
-    text-align: center;
-    z-index: 1;
-}
-
-/* HEADER */
-header h1 {
-    font-size: 1.8rem;
-    color: #55ff55;
-    margin-bottom: 15px;
-    text-shadow: 4px 4px 0px #000000;
-    line-height: 1.4;
-}
-
-header .subtitle {
-    color: #ffff55;
-    font-size: 0.8rem;
-    margin-bottom: 35px;
-    text-shadow: 3px 3px 0px #000000;
-}
-
-/* SEKSI PENJELASAN */
-.section {
-    margin-bottom: 35px;
-}
-
-.section h2 {
-    font-size: 1.1rem;
-    color: #55ffff;
-    margin-bottom: 15px;
-    text-shadow: 3px 3px 0px #000000;
-}
-
-.section p {
-    font-size: 0.75rem;
-    line-height: 2.2;
-    color: #ffffff;
-    text-shadow: 2px 2px 0px #000000;
-    max-width: 750px;
+.container {
+    max-width: 850px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.skills {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
+/* Header / Hero */
+.hero {
+    position: relative;
+    background: var(--card-bg);
+    color: var(--text-main);
+    padding: 70px 20px 50px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.skills span {
-    color: #ff55ff;
-    font-size: 0.7rem;
-    text-shadow: 2px 2px 0px #000000;
-}
-
-/* STIL PROYEK UNGGULAN MENYAMPING (GRID) */
-.projects-section {
-    margin-bottom: 40px;
-}
-
-.projects-section h2 {
-    font-size: 1.1rem;
-    color: #ff5555;
-    margin-bottom: 8px;
-    text-shadow: 3px 3px 0px #000000;
-}
-
-.subtitle-project {
-    color: #aaaaaa;
-    font-size: 0.6rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 0px #000000;
-}
-
-/* GRID MENYAMPING */
-.projects-grid {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Menyesuaikan otomatis jika layar sempit */
-}
-
-.project-item {
-    flex: 1;
-    min-width: 250px; /* Lebar minimum per kolom menyamping */
-    max-width: 300px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #ffffff;
-    box-shadow: 4px 4px 0px #000000;
+.profile-avatar {
+    margin: 0 auto 20px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     overflow: hidden;
+    border: 2px solid var(--text-main);
 }
 
-.project-header {
+.profile-avatar img {
     width: 100%;
-    background: transparent;
-    color: #ffff55;
-    padding: 12px 10px;
-    font-size: 0.65rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-shadow: 2px 2px 0px #000000;
-    transition: background 0.2s ease;
+    height: 100%;
+    object-fit: cover;
 }
 
-.project-header:hover {
-    background: rgba(255, 255, 255, 0.2);
+.badge-indo {
+    display: inline-block;
+    background: #000000;
+    color: var(--text-main);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-color);
 }
 
-.project-header i.arrow {
-    color: #55ff55;
-    transition: transform 0.3s ease;
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
 }
 
-.project-header.active i.arrow {
-    transform: rotate(180deg);
+.hero .highlight {
+    color: var(--text-main);
+    text-decoration: underline 2px white;
 }
 
-.project-details {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 10px;
-    background: rgba(0, 0, 0, 0.8);
-    text-align: left;
-    transition: max-height 0.4s ease, padding 0.3s ease;
+.hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
 }
 
-.project-details p {
-    font-size: 0.6rem;
-    line-height: 1.8;
-    color: #ffffff;
-    margin-bottom: 8px;
-    text-shadow: 1px 1px 0px #000000;
-}
-
-.project-details strong {
-    color: #55ffff;
-}
-
-/* SOSIAL MEDIA */
-.social-section {
-    margin-top: 30px;
-}
-
-.social-section h3 {
-    font-size: 1rem;
-    color: #ffaa00;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 0px #000000;
-}
-
+/* Social Buttons - 3D Hitam Putih */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
-.btn-social {
+.social-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 14px 24px;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 12px;
     text-decoration: none;
-    font-size: 0.75rem;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.6);
-    border: 3px solid #ffffff;
-    box-shadow: 4px 4px 0px #000000;
-    transition: all 0.1s ease;
-}
-
-.btn-social:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #000000;
-    background: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
     color: #000000;
+    background: #ffffff;
+    box-shadow: 0 5px 0px #71717a;
+    transition: all 0.15s ease;
+    position: relative;
+    top: 0;
 }
 
-/* FOOTER */
+.social-btn:hover {
+    top: -2px;
+    background: #f4f4f5;
+}
+
+.social-btn:active {
+    top: 5px;
+    box-shadow: 0 0px 0px transparent !important;
+}
+
+/* Penjelasan Informasi Sosial Media (CSS :target) */
+.social-info-wrapper {
+    margin-top: 20px;
+}
+
+.social-info-box {
+    display: none;
+    background: #000000;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 15px auto 0 auto;
+    text-align: left;
+}
+
+.social-info-box:target {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.social-info-box h4 {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-info-box p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.info-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.close-btn:hover {
+    color: var(--text-main);
+}
+
+/* Skills Badges */
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.skill-badge {
+    background: #000000;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+/* Card Section */
+.card-section {
+    background: var(--card-bg);
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: #000000;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.project-card {
+    background: #000000;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+}
+
+.project-card:hover {
+    border-color: var(--text-main);
+    transform: translateY(-3px);
+}
+
+.project-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.project-card h3 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Footer */
 footer {
-    margin-top: 40px;
-    font-size: 0.6rem;
-    color: #aaaaaa;
-    text-shadow: 2px 2px 0px #000000;
+    text-align: center;
+    padding: 35px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
 }
 
-/* RESPONSIVE UNTUK HP */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.2rem;
+    .hero h1 {
+        font-size: 2rem;
     }
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-item {
-        width: 100%;
-        max-width: 100%;
-    }
-    .social-links {
-        flex-direction: column;
-    }
-    .btn-social {
-        width: 100%;
-        justify-content: center;
+    .card-section {
+        padding: 20px;
     }
 }
