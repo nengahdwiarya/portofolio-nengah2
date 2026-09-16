@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio | Nengah Dwi Arya</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Syne:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
     
-    <!-- Memanggil file CSS eksternal -->
+    <!-- Link ke CSS Eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,8 +17,11 @@
     <div class="container">
         <!-- HEADER -->
         <header>
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300" alt="Foto Profil" class="profile-img">
-            <h1>Alex Doe</h1>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Tersedia untuk Proyek & Kolaborasi
+            </div>
+            <h1>Nengah Dwi Arya</h1>
             <p class="tagline">UI/UX Designer & Content Creator</p>
         </header>
 
@@ -26,7 +29,7 @@
         <section id="about">
             <h2 class="section-title">Tentang Saya</h2>
             <p class="about-text">
-                Halo! Saya berfokus pada desain visual bernuansa minimalis, estetis, dan fungsional. Berpengalaman dalam menciptakan identitas visual dan antarmuka pengguna yang bersih serta nyaman dipandang.
+                Halo! Saya Nengah Dwi Arya. Saya berfokus pada desain visual bernuansa minimalis, estetis, dan fungsional. Berpengalaman dalam menciptakan identitas visual dan antarmuka pengguna yang bersih, responsif, serta nyaman dipandang.
             </p>
         </section>
 
@@ -37,28 +40,37 @@
                 
                 <!-- Card 1 -->
                 <a href="#" class="card">
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600" alt="Project 1" class="card-img">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600" alt="Project 1" class="card-img">
+                        <span class="card-tag">Web Design</span>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Website Minimalis</h3>
-                        <p class="card-desc">Redesain tampilan landing page bertema arsitektur modern.</p>
+                        <p class="card-desc">Redesain tampilan landing page bertema arsitektur modern yang responsif dan estetis.</p>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
                 <a href="#" class="card">
-                    <img src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?auto=format&fit=crop&q=80&w=600" alt="Project 2" class="card-img">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?auto=format&fit=crop&q=80&w=600" alt="Project 2" class="card-img">
+                        <span class="card-tag">Branding</span>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Branding Identitas</h3>
-                        <p class="card-desc">Konsep identitas merek dan kemasan produk kedai kopi lokal.</p>
+                        <p class="card-desc">Konsep identitas merek, palet warna, dan kemasan produk kedai kopi lokal.</p>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
                 <a href="#" class="card">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="Project 3" class="card-img">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600" alt="Project 3" class="card-img">
+                        <span class="card-tag">Mobile App</span>
+                    </div>
                     <div class="card-content">
                         <h3 class="card-title">Mobile App Design</h3>
-                        <p class="card-desc">Aplikasi pelacak kebiasaan harian dengan layout simpel.</p>
+                        <p class="card-desc">Aplikasi pelacak kebiasaan harian dengan layout simpel dan antarmuka yang ramah pengguna.</p>
                     </div>
                 </a>
 
@@ -67,25 +79,27 @@
 
         <!-- KEAHLIAN -->
         <section id="skills">
-            <h2 class="section-title">Keahlian</h2>
+            <h2 class="section-title">Keahlian & Alat</h2>
             <div class="skills-wrapper">
                 <span class="skill-tag">UI/UX Design</span>
                 <span class="skill-tag">Figma</span>
-                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">HTML5 & CSS3</span>
+                <span class="skill-tag">Content Creation</span>
                 <span class="skill-tag">Fotografi</span>
-                <span class="skill-tag">Branding</span>
+                <span class="skill-tag">Visual Branding</span>
             </div>
         </section>
 
         <!-- FOOTER / KONTAK -->
         <footer>
+            <p class="footer-title">Mari Terhubung</p>
             <div class="social-links">
-                <a href="mailto:emailanda@example.com">Email</a>
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="mailto:emailanda@example.com" class="social-btn">Email</a>
+                <a href="https://www.instagram.com/aryanengahdwi" target="_blank" rel="noopener noreferrer" class="social-btn">Instagram</a>
+                <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" rel="noopener noreferrer" class="social-btn">TikTok</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
             </div>
-            <p class="copyright">&copy; 2026 Alex Doe. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Nengah Dwi Arya. All rights reserved.</p>
         </footer>
     </div>
 
