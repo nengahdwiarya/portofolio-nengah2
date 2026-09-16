@@ -3,126 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arya Nengah Dwi - Portofolio Pixel</title>
-    <!-- Font Pixel ala Minecraft & Icon -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Portofolio | Nengah Dwi Arya</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- VIDEO BACKGROUND -->
-    <video autoplay muted loop id="bg-video">
-        <source src="background.mp4" type="video/mp4">
-        Browser kamu tidak mendukung video HTML5.
-    </video>
-
-    <!-- OVERLAY TIPIS -->
-    <div class="video-overlay"></div>
-
-    <!-- MAIN CONTENT -->
-    <div class="content">
-        <!-- Header -->
-        <header>
-            <h1>ARYA NENGAH DWI</h1>
-            <p class="subtitle">&gt; REKAYASA PERANGKAT LUNAK &lt;</p>
-        </header>
-
-        <!-- Penjelasan RPL -->
-        <div class="section">
-            <h2>[ TENTANG RPL ]</h2>
-            <p>
-                Rekayasa Perangkat Lunak (RPL) adalah jurusan yang mempelajari cara pembuatan software, website, aplikasi mobile, hingga pengelolaan database secara interaktif.
-            </p>
-            <div class="skills">
-                <span>#WebDev</span>
-                <span>#MobileApp</span>
-                <span>#Database</span>
-                <span>#UI/UX</span>
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <!-- Foto Profil -->
+            <div class="profile-avatar">
+                <img src="images (5).jfif" alt="Foto Nengah Dwi Arya">
             </div>
-        </div>
 
-        <!-- Bagian Proyek Unggulan (Menyamping) -->
-        <div class="projects-section">
-            <h2>[ PROYEK UNGGULAN ]</h2>
-            <p class="subtitle-project">( KLIK PROYEK UTK DETAIL )</p>
-
-            <!-- Grid Menyamping -->
-            <div class="projects-grid">
-                <!-- Proyek 1 -->
-                <div class="project-item">
-                    <button class="project-header" onclick="toggleProject(this)">
-                        <span><i class="fas fa-globe"></i> POS Kasir</span>
-                        <i class="fas fa-chevron-down arrow"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>Sistem kasir berbasis web untuk kelola stok & transaksi UMKM secara otomatis.</p>
-                        <p><strong>Tech:</strong> PHP, MySQL</p>
-                    </div>
-                </div>
-
-                <!-- Proyek 2 -->
-                <div class="project-item">
-                    <button class="project-header" onclick="toggleProject(this)">
-                        <span><i class="fas fa-mobile-alt"></i> Catatan Tugas</span>
-                        <i class="fas fa-chevron-down arrow"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>Aplikasi mobile pengingat deadline tugas sekolah dengan notifikasi.</p>
-                        <p><strong>Tech:</strong> Flutter, SQLite</p>
-                    </div>
-                </div>
-
-                <!-- Proyek 3 -->
-                <div class="project-item">
-                    <button class="project-header" onclick="toggleProject(this)">
-                        <span><i class="fas fa-qrcode"></i> Absensi QR</span>
-                        <i class="fas fa-chevron-down arrow"></i>
-                    </button>
-                    <div class="project-details">
-                        <p>Sistem presensi cepat menggunakan scan QR Code kartu pelajar.</p>
-                        <p><strong>Tech:</strong> JS, Node.js</p>
-                    </div>
-                </div>
+            <div class="badge-indo">
+                🇮🇩 Web Developer & Designer Indonesia
             </div>
-        </div>
-
-        <!-- Tombol Sosial Media -->
-        <div class="social-section">
-            <h3>[ LINK SOSMED ]</h3>
-            <div class="social-links">
-                <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="btn-social btn-instagram">
-                    <i class="fab fa-instagram"></i> INSTAGRAM
-                </a>
-                
-                <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="btn-social btn-tiktok">
-                    <i class="fab fa-tiktok"></i> TIKTOK
-                </a>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 ARYA NENGAH DWI</p>
-        </footer>
-    </div>
-
-    <!-- Script Javascript Toggle Proyek -->
-    <script>
-        function toggleProject(button) {
-            const details = button.nextElementSibling;
-            button.classList.toggle('active');
+            <h1>Halo, Saya <span class="highlight">Nengah Dwi Arya</span></h1>
+            <p class="subtitle">Spesialis Pengembangan Web Modern, Responsif & Antarmuka Interaktif</p>
             
-            if (details.style.maxHeight) {
-                details.style.maxHeight = null;
-                details.style.padding = "0 10px";
-            } else {
-                details.style.maxHeight = details.scrollHeight + 20 + "px";
-                details.style.padding = "10px";
-            }
-        }
-    </script>
+            <!-- Tombol Sosial Media 3D -->
+            <div class="social-links">
+                <a href="#info-instagram" class="social-btn">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="#info-tiktok" class="social-btn">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+            </div>
+
+            <!-- Penjelasan Informasi Sosial Media (Murni CSS) -->
+            <div class="social-info-wrapper">
+                <div id="info-instagram" class="social-info-box">
+                    <h4><i class="fab fa-instagram"></i> Instagram: @aryanengahdwi</h4>
+                    <p>Di Instagram, saya membagikan aktivitas harian, dokumentasi proyek web design, serta konten seputar teknologi.</p>
+                    <a href="https://www.instagram.com/aryanengahdwi" target="_blank" class="info-link">Kunjungi Profil Instagram &rarr;</a>
+                    <a href="#" class="close-btn">Tutup &times;</a>
+                </div>
+
+                <div id="info-tiktok" class="social-info-box">
+                    <h4><i class="fab fa-tiktok"></i> TikTok: @nengahnengah5</h4>
+                    <p>Di TikTok, saya sering mengunggah video pendek seputar tips coding, kreativitas digital, dan tren terkini.</p>
+                    <a href="https://www.tiktok.com/@nengahnengah5" target="_blank" class="info-link">Kunjungi Profil TikTok &rarr;</a>
+                    <a href="#" class="close-btn">Tutup &times;</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        
+        <!-- Section Tentang Saya -->
+        <section id="about" class="card-section">
+            <div class="section-header">
+                <div class="icon-box"><i class="fas fa-user"></i></div>
+                <h2>Tentang Saya</h2>
+            </div>
+            <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, efisien, dan responsif. Berlandaskan semangat inovasi anak bangsa, saya berdedikasi untuk menciptakan solusi digital berkualitas tinggi yang memberikan dampak positif.</p>
+            <p style="margin-top: 10px;">Selain fokus pada penulisan kode yang bersih (clean code), saya juga tertarik pada desain antarmuka pengguna (UI/UX) serta optimasi performa website agar nyaman digunakan di berbagai perangkat.</p>
+            
+            <div class="skills-wrapper">
+                <span class="skill-badge">HTML5 & CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Responsive Design</span>
+                <span class="skill-badge">UI/UX Layout</span>
+                <span class="skill-badge">Git & GitHub</span>
+            </div>
+        </section>
+
+        <!-- Section Proyek Unggulan -->
+        <section id="projects" class="card-section">
+            <div class="section-header">
+                <div class="icon-box"><i class="fas fa-code"></i></div>
+                <h2>Proyek Unggulan</h2>
+            </div>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-tag">Aplikasi Web</div>
+                    <h3>Sistem Presensi</h3>
+                    <p>Aplikasi pencatatan kehadiran pegawai berbasis digital secara real-time dan terintegrasi untuk efisiensi manajemen kerja.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-tag">Portofolio</div>
+                    <h3>Website Portofolio</h3>
+                    <p>Landing page pribadi modern bertema Nusantara yang interaktif dan di-host menggunakan GitHub Pages.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 <strong>Nengah Dwi Arya</strong>. Seluruh Hak Cipta Dilindungi.</p>
+            <p class="sub-footer">Dibuat dengan semangat di Indonesia</p>
+        </div>
+    </footer>
+
 </body>
 </html>
