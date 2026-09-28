@@ -44,8 +44,32 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Internal CSS (Styling Tambahan Digabung di sini) -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #090a0f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e2235;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2a2f48;
+        }
+
+        /* Custom Selection Highlight */
+        ::selection {
+            background-color: rgba(14, 165, 233, 0.2);
+            color: #38bdf8;
+        }
+    </style>
 </head>
 <body class="bg-dark-bg text-slate-300 font-sans antialiased selection:bg-brand-500/20 selection:text-brand-500 relative min-h-screen">
 
