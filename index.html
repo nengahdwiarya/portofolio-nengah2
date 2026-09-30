@@ -1,318 +1,75 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            900: '#0c4a6e',
-                        },
-                        dark: {
-                            bg: '#090a0f',
-                            card: '#11131f',
-                            border: '#1e2235',
-                            hover: '#2a2f48'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Internal CSS (Styling Tambahan Digabung di sini) -->
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #090a0f;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1e2235;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2a2f48;
-        }
-
-        /* Custom Selection Highlight */
-        ::selection {
-            background-color: rgba(14, 165, 233, 0.2);
-            color: #38bdf8;
-        }
-    </style>
+    <title>Portofolio Saya | [Nama Kamu]</title>
+    <!-- Menambahkan CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-dark-bg text-slate-300 font-sans antialiased selection:bg-brand-500/20 selection:text-brand-500 relative min-h-screen">
+<body>
 
-    <!-- Subtle Ambient Background Light -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-brand-500/5 via-purple-500/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
-
-    <!-- Sticky Navigation -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-dark-bg/80 border-b border-dark-border/60 transition-all duration-300">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-lg text-white tracking-tight flex items-center gap-2 group">
-                <span class="w-2.5 h-2.5 rounded-full bg-brand-500 group-hover:scale-125 transition-transform"></span>
-                <span>alex.dev</span>
-            </a>
-            
-            <div class="flex items-center gap-6 text-sm font-medium text-slate-400">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="mailto:alex@example.com" class="px-3.5 py-1.5 rounded-full border border-dark-border bg-dark-card hover:border-slate-700 text-white transition-all text-xs font-mono">
-                    Get in Touch
-                </a>
-            </div>
+    <!-- Header dengan Gambar Latar/Overlay -->
+    <header class="hero">
+        <div class="container">
+            <h1>Halo, Saya <span class="highlight">[Nama Kamu]</span></h1>
+            <p>Web Developer & Designer yang Berfokus pada Pengalaman Pengguna</p>
+            <a href="#about" class="btn-primary">Kenali Saya</a>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Container -->
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 space-y-24">
-
-        <!-- Hero / About Section -->
-        <section id="about" class="space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-xs font-mono">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Available for Staff / Lead Roles</span>
+    <!-- Bagian Utama Konten -->
+    <main class="container">
+        
+        <section id="about" class="about-section">
+            <div class="section-title">
+                <h2>Tentang Saya</h2>
             </div>
-
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
-                Senior Software Engineer & System Architect.
-            </h1>
-
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl font-normal leading-relaxed">
-                Saya berpengalaman lebih dari 8 tahun merancang arsitektur sistem terdistribusi skala besar, mengoptimalkan performa tinggi, dan membangun produk digital yang presisi & responsif.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-4 pt-2 font-mono text-sm">
-                <a href="https://github.com" target="_blank" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                    <i data-lucide="github" class="w-4 h-4"></i> GitHub ↗
-                </a>
-                <span class="text-slate-700">•</span>
-                <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn ↗
-                </a>
-                <span class="text-slate-700">•</span>
-                <a href="mailto:alex@example.com" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
-                    <i data-lucide="mail" class="w-4 h-4"></i> alex@example.com
-                </a>
+            <div class="about-content">
+                <p>Saya adalah seorang pengembang web yang antusias dan kreatif, berfokus pada pembuatan aplikasi web modern, responsif, dan mudah digunakan. Saya senang memecahkan masalah kompleks melalui kode yang bersih dan desain yang intuitif.</p>
             </div>
         </section>
 
-        <!-- Metrics / Impact Highlight -->
-        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-dark-border/80">
-            <div>
-                <div class="text-3xl font-extrabold text-white font-mono">8+</div>
-                <div class="text-xs text-slate-400 mt-1">Years Experience</div>
+        <section id="projects" class="projects-section">
+            <div class="section-title">
+                <h2>Proyek Saya</h2>
             </div>
-            <div>
-                <div class="text-3xl font-extrabold text-white font-mono">2M+</div>
-                <div class="text-xs text-slate-400 mt-1">Daily Active Users</div>
-            </div>
-            <div>
-                <div class="text-3xl font-extrabold text-white font-mono">99.99%</div>
-                <div class="text-xs text-slate-400 mt-1">Uptime SLA</div>
-            </div>
-            <div>
-                <div class="text-3xl font-extrabold text-white font-mono">&lt;50ms</div>
-                <div class="text-xs text-slate-400 mt-1">P99 Latency</div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="space-y-8">
-            <div class="flex items-center gap-3">
-                <span class="text-xs font-mono uppercase tracking-widest text-brand-500 font-semibold">01.</span>
-                <h2 class="text-xl font-bold text-white tracking-tight">Work Experience</h2>
-                <div class="h-px bg-dark-border flex-1"></div>
-            </div>
-
-            <div class="space-y-8">
-                <!-- Exp Item 1 -->
-                <div class="group relative grid md:grid-cols-4 gap-2 md:gap-4 p-5 rounded-xl transition-all hover:bg-dark-card/60 hover:border hover:border-dark-border/80">
-                    <div class="text-xs font-mono text-slate-500 pt-1">2022 — Present</div>
-                    <div class="md:col-span-3 space-y-2">
-                        <h3 class="text-base font-semibold text-white group-hover:text-brand-500 transition-colors flex items-center justify-between">
-                            Staff Software Engineer
-                            <span class="text-xs font-normal text-slate-400">Tech Corp Inc.</span>
-                        </h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Memimpin arsitektur ulang core microservices dari monolith ke distributed event-driven architecture. Mengurangi response time API hingga 45% dan menangani traffic lonjakan pasca-launching tanpa downtime.
-                        </p>
-                        <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">Go</span>
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">Kubernetes</span>
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">Kafka</span>
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">PostgreSQL</span>
-                        </div>
-                    </div>
+            
+            <!-- Daftar Proyek diubah menjadi Grid Cards -->
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Sistem Presensi</h3>
+                    <p>Aplikasi web modern untuk pencatatan dan manajemen kehadiran pegawai secara *real-time*.</p>
+                    <span class="tech-tag">HTML</span> <span class="tech-tag">CSS</span> <span class="tech-tag">JS</span>
                 </div>
 
-                <!-- Exp Item 2 -->
-                <div class="group relative grid md:grid-cols-4 gap-2 md:gap-4 p-5 rounded-xl transition-all hover:bg-dark-card/60 hover:border hover:border-dark-border/80">
-                    <div class="text-xs font-mono text-slate-500 pt-1">2019 — 2022</div>
-                    <div class="md:col-span-3 space-y-2">
-                        <h3 class="text-base font-semibold text-white group-hover:text-brand-500 transition-colors flex items-center justify-between">
-                            Senior Frontend Engineer
-                            <span class="text-xs font-normal text-slate-400">Fintech Platform</span>
-                        </h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Membangun Design System internal yang digunakan oleh 40+ engineer di 5 tim produk. Mengoptimalkan Core Web Vitals hingga mencapai score 98+ pada Google Lighthouse.
-                        </p>
-                        <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">TypeScript</span>
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">Next.js</span>
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">Tailwind CSS</span>
-                            <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-dark-bg border border-dark-border text-slate-400">GraphQL</span>
-                        </div>
-                    </div>
+                <div class="project-card">
+                    <h3>Website Portofolio</h3>
+                    <p>Landing page pribadi yang responsif, menampung karya dan informasi kontak saya, di-host di GitHub Pages.</p>
+                    <span class="tech-tag">HTML</span> <span class="tech-tag">CSS</span> <span class="tech-tag">GitHub Pages</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="space-y-8">
-            <div class="flex items-center gap-3">
-                <span class="text-xs font-mono uppercase tracking-widest text-brand-500 font-semibold">02.</span>
-                <h2 class="text-xl font-bold text-white tracking-tight">Featured Projects</h2>
-                <div class="h-px bg-dark-border flex-1"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project 1 -->
-                <div class="group bg-dark-card border border-dark-border hover:border-slate-600 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <div class="p-2.5 rounded-lg bg-brand-500/10 border border-brand-500/20 text-brand-500">
-                                <i data-lucide="cpu" class="w-5 h-5"></i>
-                            </div>
-                            <a href="#" class="text-slate-500 hover:text-white transition-colors">
-                                <i data-lucide="external-link" class="w-5 h-5"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand-500 transition-colors">High-Throughput Gateway</h3>
-                            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                                API Gateway open-source yang mampu memproses lebih dari 100k req/sec dengan konsumsi memori minimal.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-6">
-                        <span class="text-[11px] font-mono text-slate-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">Go</span>
-                        <span class="text-[11px] font-mono text-slate-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">gRPC</span>
-                        <span class="text-[11px] font-mono text-slate-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">Redis</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group bg-dark-card border border-dark-border hover:border-slate-600 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <div class="p-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400">
-                                <i data-lucide="layers" class="w-5 h-5"></i>
-                            </div>
-                            <a href="#" class="text-slate-500 hover:text-white transition-colors">
-                                <i data-lucide="external-link" class="w-5 h-5"></i>
-                            </a>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-brand-500 transition-colors">Enterprise Design System</h3>
-                            <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                                Component library modern dengan WCAG AAA Accessibility, mendukung multi-theme dan animasi micro-interactions.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-6">
-                        <span class="text-[11px] font-mono text-slate-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">React</span>
-                        <span class="text-[11px] font-mono text-slate-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">Tailwind</span>
-                        <span class="text-[11px] font-mono text-slate-400 bg-dark-bg px-2 py-1 rounded border border-dark-border">Storybook</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="space-y-8">
-            <div class="flex items-center gap-3">
-                <span class="text-xs font-mono uppercase tracking-widest text-brand-500 font-semibold">03.</span>
-                <h2 class="text-xl font-bold text-white tracking-tight">Tech Stack</h2>
-                <div class="h-px bg-dark-border flex-1"></div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="p-4 rounded-xl bg-dark-card border border-dark-border space-y-3">
-                    <div class="text-xs font-mono text-brand-500 uppercase tracking-wider font-semibold">Languages</div>
-                    <ul class="text-sm text-slate-300 space-y-1.5">
-                        <li>• TypeScript / JS</li>
-                        <li>• Go (Golang)</li>
-                        <li>• Python</li>
-                        <li>• SQL / PostgreSQL</li>
-                    </ul>
-                </div>
-
-                <div class="p-4 rounded-xl bg-dark-card border border-dark-border space-y-3">
-                    <div class="text-xs font-mono text-brand-500 uppercase tracking-wider font-semibold">Frontend</div>
-                    <ul class="text-sm text-slate-300 space-y-1.5">
-                        <li>• Next.js / React</li>
-                        <li>• Tailwind CSS</li>
-                        <li>• State Management</li>
-                        <li>• Web Performance</li>
-                    </ul>
-                </div>
-
-                <div class="p-4 rounded-xl bg-dark-card border border-dark-border space-y-3">
-                    <div class="text-xs font-mono text-brand-500 uppercase tracking-wider font-semibold">Backend & DevOps</div>
-                    <ul class="text-sm text-slate-300 space-y-1.5">
-                        <li>• Node.js / Express</li>
-                        <li>• Docker / Kubernetes</li>
-                        <li>• Redis / RabbitMQ</li>
-                        <li>• AWS / GCP Cloud</li>
-                    </ul>
+                
+                <!-- Tambahkan proyek ketiga untuk contoh grid -->
+                <div class="project-card">
+                    <h3>E-Commerce Sederhana</h3>
+                    <p>Contoh toko online minimalis dengan fitur keranjang belanja dasar.</p>
+                    <span class="tech-tag">Bootstrap</span> <span class="tech-tag">Simple Cart</span>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="max-w-4xl mx-auto px-6 py-8 border-t border-dark-border/60 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-slate-500">
-        <div>© 2026 Alex. All rights reserved.</div>
-        <div>Crafted with Precision & Aesthetics.</div>
+    <!-- Footer yang Bersih -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [Nama Kamu]. Seluruh hak cipta dilindungi.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
     </footer>
 
-    <!-- Initialize Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
