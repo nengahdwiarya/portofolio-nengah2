@@ -1,17 +1,13 @@
-/* ============================================================
-   RESET & DASAR
-   ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
 
 :root {
-    --primary-color: #4f46e5; /* Indigo */
-    --secondary-color: #f9fafb; /* Light Gray */
-    --accent-color: #f59e0b; /* Amber/Gold */
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #ffffff;
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --transition: all 0.3s ease-in-out;
+    --primary-red: #d90429;
+    --dark-red: #ef233c;
+    --accent-gold: #ffb703;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #2b2d42;
+    --text-muted: #6c757d;
 }
 
 * {
@@ -21,209 +17,163 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.8;
-    color: var(--text-dark);
-    background-color: var(--secondary-color);
-    scroll-behavior: smooth;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* ============================================================
-   HEADER / HERO
-   ============================================================ */
+/* Header / Hero */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #8d0801 0%, var(--primary-red) 100%);
+    color: white;
+    padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.9) 0%, rgba(30, 27, 75, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-    color: var(--bg-light);
-    margin-bottom: 60px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 30px rgba(217, 4, 41, 0.2);
+}
+
+.badge-indo {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
-.hero h1 .highlight {
-    color: var(--accent-color);
+.hero .highlight {
+    color: #ffffff;
+    text-decoration: underline var(--accent-gold) 4px;
 }
 
-.hero p {
-    font-size: 1.25rem;
-    font-weight: 300;
-    margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+.hero .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
-.btn-primary {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--accent-color);
-    color: var(--text-dark);
+/* Social Buttons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 5px;
-    transition: var(--transition);
-}
-
-.btn-primary:hover {
-    background-color: var(--bg-light);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
-
-/* ============================================================
-   SECTIONS & UMUM
-   ============================================================ */
-section {
-    padding: 40px 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-size: 2.25rem;
-    display: inline-block;
-    border-bottom: 4px solid var(--primary-color);
-    padding-bottom: 10px;
-}
-
-/* Tentang Saya */
-.about-content {
-    background: var(--bg-light);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--text-light);
-}
-
-/* ============================================================
-   PROJECT GRID CARDS
-   ============================================================ */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background: var(--bg-light);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Garis aksen tipis di atas kartu saat hover */
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--primary-color);
-    transform: scaleX(0);
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.project-card:hover::before {
-    transform: scaleX(1);
-}
-
-.project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.project-card p {
-    color: var(--text-light);
     font-size: 0.95rem;
+    transition: all 0.3s ease;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.social-btn:hover {
+    background: white;
+    color: var(--primary-red);
+    transform: translateY(-3px);
+}
+
+/* Card Section */
+.card-section {
+    background: var(--card-bg);
+    margin: 30px 0;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
-.tech-tag {
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: #ffe5ec;
+    color: var(--primary-red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.project-card {
+    background: #fdfbfb;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-5px);
+}
+
+.project-tag {
     display: inline-block;
-    background: #e0e7ff;
-    color: var(--primary-color);
-    padding: 4px 10px;
-    font-size: 0.8rem;
-    border-radius: 20px;
-    margin-right: 5px;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer {
-    background: var(--text-dark);
-    color: var(--bg-light);
-    padding: 40px 0;
-    margin-top: 60px;
-    text-align: center;
-}
-
-footer p {
-    font-size: 0.9rem;
+.project-card h3 {
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
-.social-links a {
-    color: #a1a1aa;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: var(--transition);
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
-.social-links a:hover {
-    color: var(--bg-light);
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
-/* ============================================================
-   MEDIA QUERIES (RESPONSIF)
-   ============================================================ */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
+.heart {
+    color: var(--primary-red);
 }
